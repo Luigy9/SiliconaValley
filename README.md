@@ -17,7 +17,7 @@ videojuegos,etc. Nuestra web tendrá dos partes:
   
   **-Pedido:** constará de los diferentes objetos que el usuario quiera comprar.
   
-  **-Atencion al Cliente:** ofrecemos un soporte al cliente para recibir mensajes de los usuario que podrán ser de 
+  **-Atención al Cliente:** ofrecemos un soporte al cliente para recibir mensajes de los usuario que podrán ser de 
   diferentes temas.
   
   **-Comentarios y valoración:** permitimos a los usuarios compartir su opinión sobre los productos y realizar su 
