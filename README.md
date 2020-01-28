@@ -11,8 +11,28 @@ videojuegos,etc. Nuestra web tendrá dos partes:
 
 ## **Entidades principales de la aplicación**
 
-  **Usuario:** es el destinatario de nuestras ventas. Puede estar registrado o no.
+  **-Usuario:** es el destinatario de nuestras ventas. Puede estar registrado o no.
   
-  **Producto:** objeto que vendemos en la web. Se dispondrá de stock, el cual se actualizará segun las compras.
+  **-Producto:** objeto que vendemos en la web. Se dispondrá de stock, el cual se actualizará segun las compras.
   
-  **Atencion al Cliente:**
+  **-Pedido:** constará de los diferentes objetos que el usuario quiera comprar.
+  
+  **-Atencion al Cliente:** ofrecemos un soporte al cliente para recibir mensajes de los usuario que podrán ser de 
+  diferentes temas.
+  
+  **-Comentarios y valoración:** permitimos a los usuarios compartir su opinión sobre los productos y realizar su 
+  valoración.
+  
+## **Servicios internos de la aplicación**
+
+La aplicación integrará los servicios internos:
+  
+  **-Generación de PDF:** se generará un documento PDF para visualizar los pedidos.
+  
+  **-Notificación por correo:** al realizar un usuario un pedido, se enviará la informacion de la compra a su correo.
+  
+## **Integrantes del equipo de desarrollo**
+
+  **-Jaime Oñate Rodríguez-Pardo:** j.onater@alumnos.urjc.es, jaimerman .
+  **-Luis Alberto Riaño Osorio:** la.riano@alumnos.urjc.es, luigy9 .
+  **-Daniel Santiago Muñoz:** d.santiagom@alumnos.urjc.es, dsantiagom95
