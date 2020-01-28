@@ -1,6 +1,6 @@
 # SiliconaValley
 
-**Descripción de la aplicacion web:**
+## **Descripción de la aplicacion web:**
 
 La aplicación web esta destinada a la venta de productos informáticos y de entretenimiento como monitores,     
 videojuegos,etc. Nuestra web tendrá dos partes:
@@ -9,7 +9,7 @@ videojuegos,etc. Nuestra web tendrá dos partes:
   
   **-Parte Privada:** cuando el usuario este registrado, podran realizar los pedidos de los productos deseados.
 
-**Entidades principales de la aplicación**
+## **Entidades principales de la aplicación**
 
   **Usuario:** es el destinatario de nuestras ventas. Puede estar registrado o no.
   
