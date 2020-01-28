@@ -34,5 +34,9 @@ La aplicación integrará los servicios internos:
 ## **Integrantes del equipo de desarrollo**
 
   **-Jaime Oñate Rodríguez-Pardo:** j.onater@alumnos.urjc.es, jaimerman .
+  
   **-Luis Alberto Riaño Osorio:** la.riano@alumnos.urjc.es, luigy9 .
-  **-Daniel Santiago Muñoz:** d.santiagom@alumnos.urjc.es, dsantiagom95
+  
+  **-Daniel Santiago Muñoz:** d.santiagom@alumnos.urjc.es, dsantiagom95 .
+  
+  
