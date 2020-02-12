@@ -16,5 +16,7 @@ public class Usuario {
 	private String direccion;
 	private int telefono;
 	private String nombreCompleto;
+	
+	
 
 }
