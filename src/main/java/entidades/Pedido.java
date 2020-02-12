@@ -60,4 +60,8 @@ public class Pedido {
 		
 		this.precioTotal = precioTotal;
 	}
+	
+	public String toString() {
+		return "Pedido [idPedido=" + idPedido + ", Pedido=" + pedido + ", Direccion=" + direccion + ", Precio total=" + precioTotal +"]";
+	}
 }
