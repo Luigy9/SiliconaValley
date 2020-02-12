@@ -1,5 +1,11 @@
 package repositorios;
 
-public class RepositorioCyV {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import entidades.CyV;
+
+
+public interface RepositorioCyV extends JpaRepository<CyV, Long>{
+
+	CyV findById(long id);
 }
