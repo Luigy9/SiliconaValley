@@ -101,6 +101,6 @@ public class Usuario {
 	
 	@Override
 	public String toString() {
-		return "Exemplar [usuario=" + nombreUsuario + ", NombreCompleto=" + nombreCompleto + "]";
+		return "Usuario [usuario=" + nombreUsuario + ", NombreCompleto=" + nombreCompleto + "]";
 	}
 }
