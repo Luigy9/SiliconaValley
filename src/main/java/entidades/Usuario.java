@@ -1,9 +1,11 @@
 package entidades;
 
+import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Usuario {
@@ -17,12 +19,19 @@ public class Usuario {
 	private int telefono;
 	private String nombreCompleto;
 	private int codigoPostal;
+	private String contrasena;
+	@OneToMany(mappedBy="pedido")
+	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
+	@OneToMany(mappedBy="cyv")
+	private ArrayList<CyV> cyv = new ArrayList<CyV>();
+	@OneToMany(mappedBy="mensaje")
+	private ArrayList<Mensaje> mensajes = new ArrayList<Mensaje>();
 
 	public Usuario() {
 		
 	}
 	
-	public Usuario(String nombreusuario, String email, String direccion, int telefono, String nombreCompleto) {
+	public Usuario(String nombreusuario, String email, String direccion, int telefono, String nombreCompleto, int codigoPostal, String contrasena) {
 
 		this.email = email;
 		this.direccion = direccion;
@@ -30,6 +39,7 @@ public class Usuario {
 		this.nombreUsuario = nombreusuario;
 		this.nombreCompleto = nombreCompleto;
 		this.codigoPostal = codigoPostal;
+		this.contrasena = contrasena;
 		
 	}
 	
@@ -73,7 +83,7 @@ public class Usuario {
 		this.nombreUsuario = nombreUsuario;
 	}
 	
-	public Integer getCodigoPostal() {
+	public int getCodigoPostal() {
 		return codigoPostal;
 	}
 
@@ -81,8 +91,16 @@ public class Usuario {
 		this.codigoPostal = codigoPostal;
 	}
 	
+	public String getContrasena() {
+		return contrasena;
+	}
+	
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+	
 	@Override
 	public String toString() {
-		return "Exemplar [usuario=" + nombreUsuario + ", NombreCompleto=" + nombreCompleto + "]";
+		return "Usuario [usuario=" + nombreUsuario + ", NombreCompleto=" + nombreCompleto + "]";
 	}
 }

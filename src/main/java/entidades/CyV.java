@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class CyV {
@@ -13,10 +15,14 @@ public class CyV {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long idCyV;
-	private Producto producto;
-	private Usuario usuario;
 	private Date fecha;
 	private String contenido;
+	@ManyToOne
+    @JoinColumn(name="usuario")
+	private Usuario usuario;
+	@ManyToOne
+    @JoinColumn(name="producto")
+	private Producto producto;
 	
 	public CyV() {
 		
@@ -63,7 +69,7 @@ public class CyV {
 	
 	@Override
 	public String toString() {
-		return "CyC [Usuario=" + usuario + ", producto=" + producto + ", fecha=" + fecha + ", contenido=" + contenido +"]";
+		return "CyV [Usuario=" + usuario + ", producto=" + producto + ", fecha=" + fecha + ", contenido=" + contenido +"]";
 	}
 	
 }
