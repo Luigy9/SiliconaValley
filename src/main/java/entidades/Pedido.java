@@ -2,9 +2,14 @@ package entidades;
 
 import java.util.ArrayList;
 
+import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.Cascade;
 
 public class Pedido {
 
@@ -14,6 +19,9 @@ public class Pedido {
 	private ArrayList <String> pedido = new ArrayList<String>();
 	private String direccion;
 	private double precioTotal;
+	@ManyToOne
+    @JoinColumn(name="usuario")
+	private Usuario usuario;
 	
 	public Pedido() {
 		
