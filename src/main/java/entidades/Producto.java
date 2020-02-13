@@ -13,7 +13,7 @@ public class Producto {
 	private long idProducto;
 	private long categoria;
 	private String descripcion;
-	private int precio;
+	private double precio;
 	
 	public Producto() {
 		
@@ -49,7 +49,7 @@ public class Producto {
 		this.descripcion=descripcion;
 	}
 	
-	public int getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 	

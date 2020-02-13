@@ -22,7 +22,7 @@ public class Usuario {
 		
 	}
 	
-	public Usuario(String nombreusuario, String email, String direccion, int telefono, String nombreCompleto) {
+	public Usuario(String nombreusuario, String email, String direccion, int telefono, String nombreCompleto, int codigoPostal) {
 
 		this.email = email;
 		this.direccion = direccion;
@@ -73,7 +73,7 @@ public class Usuario {
 		this.nombreUsuario = nombreUsuario;
 	}
 	
-	public Integer getCodigoPostal() {
+	public int getCodigoPostal() {
 		return codigoPostal;
 	}
 
