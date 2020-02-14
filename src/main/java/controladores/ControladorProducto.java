@@ -1,9 +1,15 @@
 package controladores;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import repositorios.RepositorioProducto;
+
 public class ControladorProducto {
+	
+	@Autowired
+	private RepositorioProducto repositorioproducto;
 
 	@RequestMapping("")//Añadir html donde va 
 	public String agregarProducto (Model model) {
