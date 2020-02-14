@@ -6,6 +6,6 @@ import entidades.Mensaje;
 
 public interface RepositorioMensaje extends JpaRepository<Mensaje, Long>{
 	
-	Mensaje findById(long id);
+	Mensaje findByIdMensaje(long idMensaje);
 
 }

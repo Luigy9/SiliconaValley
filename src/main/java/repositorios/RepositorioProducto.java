@@ -6,7 +6,7 @@ import entidades.Producto;
 
 public interface RepositorioProducto extends JpaRepository<Producto, Long>{
 	
-	Producto findById(long id);
+	Producto findByIdProducto(long idProducto);
 
 }
 

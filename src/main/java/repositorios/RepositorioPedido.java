@@ -6,7 +6,7 @@ import entidades.Pedido;
 
 public interface RepositorioPedido extends JpaRepository<Pedido, Long>{
 	
-	Pedido findById(long id);
+	Pedido findByIdPedido(long idPedido);
 
 }
 

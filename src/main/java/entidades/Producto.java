@@ -1,6 +1,7 @@
 package entidades;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,9 +21,9 @@ public class Producto {
 	private long categoria;
 	private String descripcion;
 	private double precio;
-	@OneToMany(mappedBy="cyv")
+	@OneToMany(mappedBy="producto")
 	@Cascade({CascadeType.ALL})
-	private ArrayList<CyV> cyv = new ArrayList<CyV>();
+	private List<CyV> cyv = new ArrayList<CyV>();
 
 	
 	public Producto() {
@@ -67,11 +68,11 @@ public class Producto {
 		this.precio=precio;
 	}
 	
-    public ArrayList<CyV> getCyV() {
+    public List<CyV> getCyV() {
 			return cyv;
 		}
 
-    public void setCyV(ArrayList<CyV> cyv) {
+    public void setCyV(List<CyV> cyv) {
 			this.cyv = cyv;
     }
 	

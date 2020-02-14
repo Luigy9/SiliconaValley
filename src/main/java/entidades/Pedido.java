@@ -1,6 +1,7 @@
 package entidades;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,6 @@ public class Pedido {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long idPedido;
-	private ArrayList <String> pedido = new ArrayList<String>();
 	private String direccion;
 	private double precioTotal;
 	@ManyToOne
@@ -30,10 +30,9 @@ public class Pedido {
 		
 	}
 	
-	public Pedido (long idPedido, ArrayList<String> pedido, String direccion, double precioTotal) {
+	public Pedido (long idPedido, String direccion, double precioTotal) {
 		
 		this.idPedido = idPedido;
-		this.pedido = pedido;
 		this.direccion = direccion;
 		this.precioTotal = precioTotal;
 		
@@ -45,14 +44,6 @@ public class Pedido {
 	
 	public void setIdPedido(long idPedido) {
 		this.idPedido=idPedido;
-	}
-	
-	public ArrayList<String> getPedido(){
-		return pedido;
-	}
-	
-	public void setPedido (ArrayList<String> pedido) {
-		this.pedido = pedido;
 	}
 	
 	public String getDireccion() {
@@ -81,7 +72,8 @@ public class Pedido {
 		this.usuario = usuario;
 	}
 	
+	@Override
 	public String toString() {
-		return "Pedido [idPedido=" + idPedido + ", Pedido=" + pedido + ", Direccion=" + direccion + ", Precio total=" + precioTotal +"]";
+		return "Pedido [idPedido=" + idPedido + ", Direccion=" + direccion + ", Precio total=" + precioTotal +"]";
 	}
 }

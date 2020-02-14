@@ -7,5 +7,5 @@ import entidades.CyV;
 
 public interface RepositorioCyV extends JpaRepository<CyV, Long>{
 
-	CyV findById(long id);
+	CyV findByIdCyV(long idCyV);
 }

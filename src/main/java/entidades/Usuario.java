@@ -1,7 +1,7 @@
 package entidades;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,16 +26,17 @@ public class Usuario {
 	private String nombreCompleto;
 	private int codigoPostal;
 	private String contrasena;
-	@OneToMany(mappedBy="pedido")
+	@OneToMany(mappedBy="usuario")
 	@Cascade({CascadeType.ALL})
-	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
-	@OneToMany(mappedBy="cyv")
+	private List<Pedido> pedidos = new ArrayList<Pedido>();
+	@OneToMany(mappedBy="usuario")
 	@Cascade({CascadeType.ALL})
-	private ArrayList<CyV> cyv = new ArrayList<CyV>();
-	@OneToMany(mappedBy="mensaje")
+	private List<CyV> cyv = new ArrayList<CyV>();
+	@OneToMany(mappedBy="usuario")
 	@Cascade({CascadeType.ALL})
-	private ArrayList<Mensaje> mensajes = new ArrayList<Mensaje>();
+	private List<Mensaje> mensajes = new ArrayList<Mensaje>();
 
+	
 	public Usuario() {
 		
 	}
@@ -115,25 +116,25 @@ public class Usuario {
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
-    public ArrayList<CyV> getCyV() {
+    public List<CyV> getCyV() {
 			return cyv;
 		}
 
-    public void setCyV(ArrayList<CyV> cyv) {
+    public void setCyV(List<CyV> cyv) {
 			this.cyv = cyv;
     }
-    public ArrayList<Pedido> getPedido() {
+    public List<Pedido> getPedido() {
 			return pedidos;
 		}
 
-    public void setPedidos(ArrayList<Pedido> pedidos) {
+    public void setPedidos(List<Pedido> pedidos) {
 			this.pedidos = pedidos;
     }
-    public ArrayList<Mensaje> getMensaje() {
+    public List<Mensaje> getMensaje() {
 			return mensajes;
 		}
 
-    public void setMensaje(ArrayList<Mensaje> mensajes) {
+    public void setMensaje(List<Mensaje> mensajes) {
 			this.mensajes = mensajes;
     }
 	
