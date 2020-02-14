@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 public class CyV {
 
@@ -18,9 +21,11 @@ public class CyV {
 	private Date fecha;
 	private String contenido;
 	@ManyToOne
+	@Cascade({CascadeType.SAVE_UPDATE})
     @JoinColumn(name="usuario")
 	private Usuario usuario;
 	@ManyToOne
+	@Cascade({CascadeType.SAVE_UPDATE})
     @JoinColumn(name="producto")
 	private Producto producto;
 	
@@ -33,6 +38,14 @@ public class CyV {
 		this.usuario=usuario;
 		this.fecha=fecha;
 		this.contenido=contenido;
+	}
+	
+	public long getIdCyV() {
+		return idCyV;
+	}
+	
+	public void setIdMensaje (long idCyV) {
+		this.idCyV = idCyV;
 	}
 	
 	public Producto getProducto() {

@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 public class Mensaje {
 
@@ -19,6 +22,7 @@ public class Mensaje {
 	private Date fechaComentario;
 	private int valoracion;
 	@ManyToOne
+	@Cascade({CascadeType.SAVE_UPDATE})
 	@JoinColumn(name = "usuario")
 	private Usuario usuario;
 	

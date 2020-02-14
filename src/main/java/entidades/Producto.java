@@ -2,16 +2,14 @@ package entidades;
 
 import java.util.ArrayList;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 public class Producto {
@@ -23,6 +21,7 @@ public class Producto {
 	private String descripcion;
 	private double precio;
 	@OneToMany(mappedBy="cyv")
+	@Cascade({CascadeType.ALL})
 	private ArrayList<CyV> cyv = new ArrayList<CyV>();
 
 	
@@ -67,6 +66,14 @@ public class Producto {
 	public void setPrecio(int precio) {
 		this.precio=precio;
 	}
+	
+    public ArrayList<CyV> getCyV() {
+			return cyv;
+		}
+
+    public void setCyV(ArrayList<CyV> cyv) {
+			this.cyv = cyv;
+    }
 	
 	@Override
 	public String toString() {

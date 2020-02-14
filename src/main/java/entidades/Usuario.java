@@ -1,11 +1,17 @@
 package entidades;
 
 import java.util.ArrayList;
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 
 @Entity
 public class Usuario {
@@ -21,10 +27,13 @@ public class Usuario {
 	private int codigoPostal;
 	private String contrasena;
 	@OneToMany(mappedBy="pedido")
+	@Cascade({CascadeType.ALL})
 	private ArrayList<Pedido> pedidos = new ArrayList<Pedido>();
 	@OneToMany(mappedBy="cyv")
+	@Cascade({CascadeType.ALL})
 	private ArrayList<CyV> cyv = new ArrayList<CyV>();
 	@OneToMany(mappedBy="mensaje")
+	@Cascade({CascadeType.ALL})
 	private ArrayList<Mensaje> mensajes = new ArrayList<Mensaje>();
 
 	public Usuario() {
@@ -41,6 +50,14 @@ public class Usuario {
 		this.codigoPostal = codigoPostal;
 		this.contrasena = contrasena;
 		
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setIdMensaje (long id) {
+		this.id = id;
 	}
 	
 	public String getNombreCompleto() {
@@ -98,6 +115,27 @@ public class Usuario {
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
+    public ArrayList<CyV> getCyV() {
+			return cyv;
+		}
+
+    public void setCyV(ArrayList<CyV> cyv) {
+			this.cyv = cyv;
+    }
+    public ArrayList<Pedido> getPedido() {
+			return pedidos;
+		}
+
+    public void setPedidos(ArrayList<Pedido> pedidos) {
+			this.pedidos = pedidos;
+    }
+    public ArrayList<Mensaje> getMensaje() {
+			return mensajes;
+		}
+
+    public void setMensaje(ArrayList<Mensaje> mensajes) {
+			this.mensajes = mensajes;
+    }
 	
 	@Override
 	public String toString() {

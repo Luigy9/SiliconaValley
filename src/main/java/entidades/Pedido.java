@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 public class Pedido {
 
@@ -18,7 +21,8 @@ public class Pedido {
 	private ArrayList <String> pedido = new ArrayList<String>();
 	private String direccion;
 	private double precioTotal;
-	@ManyToOne  
+	@ManyToOne
+	@Cascade({CascadeType.SAVE_UPDATE})
     @JoinColumn(name="usuario")
 	private Usuario usuario;
 	
@@ -66,6 +70,15 @@ public class Pedido {
 	public void setPrecioTotal (double precioTotal) {
 		
 		this.precioTotal = precioTotal;
+	}
+	
+	public Usuario getUsuario () {
+		return usuario;
+	}
+	
+	public void setUsuario (Usuario usuario) {
+		
+		this.usuario = usuario;
 	}
 	
 	public String toString() {
