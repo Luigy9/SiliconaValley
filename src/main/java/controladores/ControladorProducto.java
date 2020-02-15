@@ -11,6 +11,12 @@ public class ControladorProducto {
 	
 	@Autowired
 	private RepositorioProducto repositorioproducto;
+	
+	@RequestMapping("/buscarCategoriaPortatilGaming")//Añadir html donde va 
+	public String buscarCategoriaPortatilGaming () {
+		
+		return "shop";
+	}
 
 //	@RequestMapping("")//Añadir html donde va 
 //	public String agregarProducto (Model model) {
@@ -35,13 +41,13 @@ public class ControladorProducto {
 //		
 //		return "";
 //	}
-	
-	@RequestMapping("/buscarCategoriaAsc")//Añadir html donde va 
-	public String buscarCategoriaAsc () {
-		
-		return "shop";
-	}
-	
+//	
+//	@RequestMapping("/buscarCategoriaAsc")//Añadir html donde va 
+//	public String buscarCategoriaAsc () {
+//		
+//		return "shop";
+//	}
+//	
 //	@RequestMapping("")//Añadir html donde va 
 //	public String buscarCategoriaDesc (Model model) {
 //		
