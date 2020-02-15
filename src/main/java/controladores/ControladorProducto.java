@@ -12,8 +12,62 @@ public class ControladorProducto {
 	@Autowired
 	private RepositorioProducto repositorioproducto;
 	
-	@RequestMapping("/buscarCategoriaPortatilGaming")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaSobremesa")//Añadir html donde va 
+	public String buscarCategoriaSobremesa () {
+		
+		return "shop";
+	}
+	
+	@RequestMapping("/buscarCategoriaPortatiles")//Añadir html donde va 
 	public String buscarCategoriaPortatilGaming () {
+		
+		return "shop";
+	}
+	
+	@RequestMapping("/buscarCategoriaRatones")//Añadir html donde va 
+	public String buscarCategoriaRatones() {
+		
+		return "shop";
+	}
+	@RequestMapping("/buscarCategoriaTeclados")//Añadir html donde va 
+	public String buscarCategoriaTeclados() {
+		
+		return "shop";
+	}
+	@RequestMapping("/buscarCategoriaMonitores")//Añadir html donde va 
+	public String buscarCategoriaMonitores() {
+		
+		return "shop";
+	}
+	@RequestMapping("/buscarCategoriaAudio")//Añadir html donde va 
+	public String buscarCategoriaAudio() {
+		
+		return "shop";
+	}
+	@RequestMapping("/buscarCategoriaConsolas")//Añadir html donde va 
+	public String buscarCategoriaConsolas() {
+		
+		return "shop";
+	}
+	@RequestMapping("/buscarCategoriaJuegos")//Añadir html donde va 
+	public String buscarCategoriaJuegos() {
+		
+		return "shop";
+	}
+	
+	@RequestMapping("/buscarCategoriaJuegosPs4")//Añadir html donde va 
+	public String buscarCategoriaJuegosPs4() {
+		
+		return "shop";
+	}
+	@RequestMapping("/buscarCategoriaJuegosXbox")//Añadir html donde va 
+	public String buscarCategoriaJuegosXbox() {
+		
+		return "shop";
+	}
+	
+	@RequestMapping("/buscarCategoriaJuegosNintendo")//Añadir html donde va 
+	public String buscarCategoriaJuegosNintendo() {
 		
 		return "shop";
 	}
