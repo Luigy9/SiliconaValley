@@ -18,7 +18,8 @@ public class Producto {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long idProducto;
-	private long categoria;
+	private String nombre;
+	private String categoria;
 	private String descripcion;
 	private double precio;
 	@OneToMany(mappedBy="producto")
@@ -30,7 +31,8 @@ public class Producto {
 		
 	}
 	
-	public Producto(long categoria, String descripcion, int precio) {
+	public Producto(String nombre, String categoria, String descripcion, int precio) {
+		this.nombre = nombre;
 		this.categoria=categoria;
 		this.descripcion=descripcion;
 		this.precio=precio;
@@ -44,11 +46,19 @@ public class Producto {
 		this.idProducto=idProducto;
 	}
 	
-	public long getCategoria() {
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public void setNombre(String nombre) {
+		this.nombre=nombre;
+	}
+	
+	public String getCategoria() {
 		return categoria;
 	}
 	
-	public void setCategoria(long categoria) {
+	public void setCategoria(String categoria) {
 		this.categoria=categoria;
 	}
 	

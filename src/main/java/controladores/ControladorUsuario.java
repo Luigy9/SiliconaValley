@@ -18,6 +18,16 @@ public class ControladorUsuario {
 	@Autowired
 	private RepositorioUsuario repositoriousuario;
 
-
+	@PostConstruct
+	public void init() {
+		
+		Usuario usuario1 = new Usuario ("Luis Riaño", "luigys.dad@gmail.com","avenida del tulipan", 913456767, "LUigyy9", 280123, "pa2q34rh1k");
+		Usuario usuario2 = new Usuario ("Daniel Santiago", "Dani@gmail.com", "Calle Ramón Pascual", 688756214, "DanySant", 28953, "12s3ff4g");
+		Usuario usuario3 = new Usuario ("Jaime Pardo", "james@hotmail.com", "Calle del rosario", 654221478, "Jaopar", 28007, "66752d214");
+		repositoriousuario.save(usuario1);
+		repositoriousuario.save(usuario2);
+		repositoriousuario.save(usuario3);
+	}
+	
 
 }

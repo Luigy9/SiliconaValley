@@ -1,10 +1,13 @@
 package controladores;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import entidades.Producto;
 import repositorios.RepositorioProducto;
 @Controller
 public class ControladorProducto {
@@ -12,61 +15,68 @@ public class ControladorProducto {
 	@Autowired
 	private RepositorioProducto repositorioproducto;
 	
-	@RequestMapping("/buscarCategoriaSobremesa")//Añadir html donde va 
+	@PostConstruct
+	public void init() {
+		
+		Producto p1 = new Producto ("MSI GP65 Leopard 9SD-013ES,","Portatil", "Intel Core i7, 16GB RAM, Nvidia GTX1660Ti 6GB", 1799);
+		repositorioproducto.save(p1);
+	}
+	
+	@RequestMapping("/buscarCategoriaSobremesa")
 	public String buscarCategoriaSobremesa () {
 		
 		return "shop";
 	}
 	
-	@RequestMapping("/buscarCategoriaPortatiles")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaPortatiles")
 	public String buscarCategoriaPortatilGaming () {
 		
 		return "shop";
 	}
 	
-	@RequestMapping("/buscarCategoriaRatones")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaRatones")
 	public String buscarCategoriaRatones() {
 		
 		return "shop";
 	}
-	@RequestMapping("/buscarCategoriaTeclados")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaTeclados")
 	public String buscarCategoriaTeclados() {
 		
 		return "shop";
 	}
-	@RequestMapping("/buscarCategoriaMonitores")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaMonitores")
 	public String buscarCategoriaMonitores() {
 		
 		return "shop";
 	}
-	@RequestMapping("/buscarCategoriaAudio")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaAudio")
 	public String buscarCategoriaAudio() {
 		
 		return "shop";
 	}
-	@RequestMapping("/buscarCategoriaConsolas")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaConsolas")
 	public String buscarCategoriaConsolas() {
 		
 		return "shop";
 	}
-	@RequestMapping("/buscarCategoriaJuegos")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaJuegos")
 	public String buscarCategoriaJuegos() {
 		
 		return "shop";
 	}
 	
-	@RequestMapping("/buscarCategoriaJuegosPs4")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaJuegosPs4")
 	public String buscarCategoriaJuegosPs4() {
 		
 		return "shop";
 	}
-	@RequestMapping("/buscarCategoriaJuegosXbox")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaJuegosXbox")
 	public String buscarCategoriaJuegosXbox() {
 		
 		return "shop";
 	}
 	
-	@RequestMapping("/buscarCategoriaJuegosNintendo")//Añadir html donde va 
+	@RequestMapping("/buscarCategoriaJuegosNintendo")
 	public String buscarCategoriaJuegosNintendo() {
 		
 		return "shop";
