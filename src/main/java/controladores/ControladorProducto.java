@@ -67,11 +67,31 @@ public class ControladorProducto {
 		Producto h4 = new Producto ("Razer Basilisk","Raton","Raton Gaming",56);
 		repositorioproducto.save(h4);
 		
+		
+		
+		//Juegos
+		//Juegos PS4
+		
+		Producto JP1 = new Producto ("Gran Turismo Sport PS4","Juegos","Juego PS4",30);
+		repositorioproducto.save(JP1);
+
+		
+		//Juegos Xbox
+		
+		Producto JX1 = new Producto("Halo 3 Xbox One","Juegos","Juego Xbox",40);
+		repositorioproducto.save(JX1);
+		
+		//Juegos Nintendo
+		
+		Producto JN1 = new Producto("Pokemon Espada Nintendo Switch","Juegos","Juego Nintendo",45);
+		repositorioproducto.save(JN1); 
+
 	}
 	
 	@RequestMapping("/buscarCategoriaSobremesa")
-	public String buscarCategoriaSobremesa () {
-		
+	public String buscarCategoriaSobremesa (Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Sobremesa");
+		model.addAttribute("productos", productos);
 		return "shop";
 	}
 	
@@ -85,50 +105,60 @@ public class ControladorProducto {
 	}
 	
 	@RequestMapping("/buscarCategoriaRatones")
-	public String buscarCategoriaRatones() {
-		
+	public String buscarCategoriaRatones(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Raton");
+		model.addAttribute("productos", productos);
 		return "shop";
 	}
 	@RequestMapping("/buscarCategoriaTeclados")
-	public String buscarCategoriaTeclados() {
-		
+	public String buscarCategoriaTeclados(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Teclado");
+		model.addAttribute("productos", productos);
 		return "shop";
 	}
 	@RequestMapping("/buscarCategoriaMonitores")
-	public String buscarCategoriaMonitores() {
-		
+	public String buscarCategoriaMonitores(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Monitor");
+		model.addAttribute("productos", productos);
 		return "shop";
 	}
 	@RequestMapping("/buscarCategoriaAudio")
-	public String buscarCategoriaAudio() {
-		
+	public String buscarCategoriaAudio(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Audio");
+		model.addAttribute("productos", productos);
 		return "shop";
 	}
 	@RequestMapping("/buscarCategoriaConsolas")
-	public String buscarCategoriaConsolas() {
-		
+	public String buscarCategoriaConsolas(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Consola");
+		model.addAttribute("productos", productos);
 		return "shop";
 	}
 	@RequestMapping("/buscarCategoriaJuegos")
-	public String buscarCategoriaJuegos() {
-		
+	public String buscarCategoriaJuegos(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Juegos");
+		model.addAttribute("productos", productos);
 		return "shop";
 	}
 	
 	@RequestMapping("/buscarCategoriaJuegosPs4")
-	public String buscarCategoriaJuegosPs4() {
-		
+	public String buscarCategoriaJuegosPs4(Model model) {
+		List<Producto> productos = repositorioproducto.findByDescripcion("Juego PS4");
+		model.addAttribute("productos", productos);
 		return "shop";
 	}
 	@RequestMapping("/buscarCategoriaJuegosXbox")
-	public String buscarCategoriaJuegosXbox() {
+	public String buscarCategoriaJuegosXbox(Model model) {
+		List<Producto> productos = repositorioproducto.findByDescripcion("Juego Xbox");
+		model.addAttribute("productos", productos);
 		
 		return "shop";
 	}
 	
 	@RequestMapping("/buscarCategoriaJuegosNintendo")
-	public String buscarCategoriaJuegosNintendo() {
-		
+	public String buscarCategoriaJuegosNintendo(Model model) {
+		List<Producto> productos = repositorioproducto.findByDescripcion("Juego Nintendo");
+		model.addAttribute("productos", productos);
 		return "shop";
 	}
 
