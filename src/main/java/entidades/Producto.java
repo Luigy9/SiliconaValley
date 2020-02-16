@@ -22,6 +22,7 @@ public class Producto {
 	private String categoria;
 	private String descripcion;
 	private double precio;
+	private String urlImagen;
 	@OneToMany(mappedBy="producto")
 	@Cascade({CascadeType.ALL})
 	private List<CyV> cyv = new ArrayList<CyV>();
@@ -31,10 +32,11 @@ public class Producto {
 		
 	}
 	
-	public Producto(String nombre, String categoria, String descripcion, int precio) {
+	public Producto(String nombre, String categoria, String descripcion, String urlImagen,int precio) {
 		this.nombre = nombre;
 		this.categoria=categoria;
 		this.descripcion=descripcion;
+		this.urlImagen = urlImagen;
 		this.precio=precio;
 	}
 	
@@ -74,6 +76,13 @@ public class Producto {
 		return precio;
 	}
 	
+	public String getUrlImagen() {
+		return urlImagen;
+	}
+	
+	public void setUrlImagen(String urlImagen) {
+		this.urlImagen=urlImagen;
+	}
 	public void setPrecio(int precio) {
 		this.precio=precio;
 	}
