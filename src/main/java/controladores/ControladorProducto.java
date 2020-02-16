@@ -1,5 +1,7 @@
 package controladores;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,12 @@ public class ControladorProducto {
 		
 		Producto p1 = new Producto ("MSI GP65 Leopard 9SD-013ES,","Portatil", "Intel Core i7, 16GB RAM, Nvidia GTX1660Ti 6GB", 1799);
 		repositorioproducto.save(p1);
+		Producto p2 = new Producto ("MSI GP75 Leopard 9SD-015ES,","Portatil", "Intel Core i7, 16GB RAM, Nvidia GTX1700Ti 8GB", 2199);
+		repositorioproducto.save(p2);
+		Producto p3 = new Producto ("MSI GP85 Leopard 9SD-013ES,","Portatil", "Intel Core i7, 16GB RAM, Nvidia GTX1800Ti 6GB", 2399);
+		repositorioproducto.save(p3);
+		Producto p4 = new Producto ("MSI GP95 Leopard 9SD-015ES,","Portatil", "Intel Core i7, 16GB RAM, Nvidia GTX2000Ti 8GB", 2599);
+		repositorioproducto.save(p4);
 	}
 	
 	@RequestMapping("/buscarCategoriaSobremesa")
@@ -29,7 +37,10 @@ public class ControladorProducto {
 	}
 	
 	@RequestMapping("/buscarCategoriaPortatiles")
-	public String buscarCategoriaPortatilGaming () {
+	public String buscarCategoriaPortatilGaming (Model model) {
+		
+		List<Producto> productos = repositorioproducto.findByCategoria("Portatil");
+		model.addAttribute("productos", productos);
 		
 		return "shop";
 	}
