@@ -8,7 +8,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import entidades.Usuario;
 import repositorios.RepositorioUsuario;
@@ -41,10 +43,15 @@ public class ControladorUsuario {
 		
 		return "login";
 	}	
-	@RequestMapping("/agregarUsuario")
-	public String agregarUsuario (Model model) {
+	
+	
+	@PostMapping("/agregarUsuario")
+	public String agregarUsuario (@RequestParam String nombreUsuario,@RequestParam String password,Model model) {
 		
-		return "";
+		Usuario u = new Usuario (nombreUsuario,password);
+		repositoriousuario.save(u);
+		
+		return "index";
 	}
 	
 	@RequestMapping("/modificarUsuario")
