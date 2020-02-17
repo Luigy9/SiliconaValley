@@ -20,7 +20,7 @@ public class Mensaje {
 	private long idMensaje;
 	private String comentario;
 	private Date fechaComentario;
-	private int valoracion;
+	private String email;
 	@ManyToOne
 	@Cascade({CascadeType.SAVE_UPDATE})
 	@JoinColumn(name = "usuario")
@@ -31,11 +31,11 @@ public class Mensaje {
 		
 	}
 	
-	public Mensaje (String comentario, Date fechaComentario, int valoracion, Usuario usuario) {
+	public Mensaje (String comentario, Date fechaComentario, String email, Usuario usuario) {
 		
 		this.comentario = comentario;
 		this.fechaComentario = fechaComentario;
-		this.valoracion = valoracion;
+		this.email = email;
 		this.usuario = usuario;
 	}
 	
@@ -63,12 +63,12 @@ public class Mensaje {
 		this.fechaComentario = fechaComentario;
 	}
 	
-	public int getValoracion() {
-		return valoracion;
+	public String getValoracion() {
+		return email;
 	}
 	
-	public void setValoracion(int valoracion) {
-		this.valoracion = valoracion;
+	public void setValoracion(String email) {
+		this.email = email;
 	}
 	
 	public Usuario getUsuario() {
@@ -81,7 +81,7 @@ public class Mensaje {
 	
 	@Override
 	public String toString() {
-		return "Mensaje [Usuario=" + usuario + ", comentario=" + comentario + ", fecha=" + fechaComentario + ", valoracion=" + valoracion +"]";
+		return "Mensaje [Usuario=" + usuario + ", comentario=" + comentario + ", fecha=" + fechaComentario + ", email=" + email +"]";
 	}
 }
 
