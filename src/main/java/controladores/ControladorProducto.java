@@ -49,7 +49,7 @@ public class ControladorProducto {
 		
 		Producto m1 = new Producto ("MSI Optix MAG321CURV 31,5\" ","Monitor","Monitor Curvo LED 4K HDR","",499);
 		repositorioproducto.save(m1);
-		Producto m2 = new Producto ("Dell Alienware AW3420DW 34\" ","Monitor","Monitor Curvo LED WQHD 120Hz G-Sync","img/dell-alienware-aw3420dw-341-led-wqhd-120hz-g-sync-curvo",1046);
+		Producto m2 = new Producto ("Dell Alienware AW3420DW 34\" ","Monitor","Monitor Curvo LED WQHD 120Hz G-Sync","img/dell-alienware-aw3420dw-341-led-wqhd-120hz-g-sync-curvo.jpg",1046);
 		repositorioproducto.save(m2);
 		Producto m3 = new Producto ("Asus ROG Swift PG279QE 27\" ","Monitor","Monitor LED IPS Wide QuadHD 165Hz G-Sync","",657);
 		repositorioproducto.save(m3);
