@@ -1,6 +1,6 @@
 package entidades;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,10 +31,10 @@ public class Mensaje {
 		
 	}
 	
-	public Mensaje (String comentario, Date fechaComentario, String email, Usuario usuario) {
-		
-		this.comentario = comentario;
+	public Mensaje (Date fechaComentario, String comentario, String email, Usuario usuario) {
+				
 		this.fechaComentario = fechaComentario;
+		this.comentario = comentario;
 		this.email = email;
 		this.usuario = usuario;
 	}

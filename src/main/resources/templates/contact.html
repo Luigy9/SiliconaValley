@@ -270,17 +270,28 @@
                             <form action="/enviarMensaje" class="comment-form" method="post">
                                 <div class="row">
                                     <div class="col-lg-6">
+                                    <p>
                                     <select class="form-control" name="usuario" required>
-                                    </select>
                                     {{#usuarios}}
                                         <option value="{{id}}">{{nombreUsuario}}</option>
                                     {{/usuarios}}
+                                    {{^usuarios}}
+                                    <option disabled>
+                                    No existe ninguna ciudad
+                                    </option>
+                                    {{/usuarios}}
+                                    </select>
+                                    </p>
                                     </div>
                                     <div class="col-lg-6">
                                         <input type="text" placeholder="Your email" name="email">
                                     </div>
                                     <div class="col-lg-12">
                                         <textarea placeholder="Your message" name="comentario"></textarea>
+                                        <p>
+						<b>Fecha</b><br /> 
+						<input type="date" name="fechacomentario" max="2020-4-31" class="form-control" required />
+					</p>
                                         <button type="submit" class="site-btn">Send message</button>
                                     </div>
                                 </div>

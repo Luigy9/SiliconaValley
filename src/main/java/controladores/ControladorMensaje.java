@@ -1,10 +1,16 @@
 package controladores;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import entidades.Mensaje;
+import entidades.Usuario;
 import repositorios.RepositorioMensaje;
 import repositorios.RepositorioUsuario;
 
@@ -14,6 +20,7 @@ public class ControladorMensaje {
 	
 	@Autowired
 	private RepositorioMensaje repositoriomensaje;
+	@Autowired
 	private RepositorioUsuario repositorioUsuario;
 	
 	@RequestMapping("/accederContacto")
@@ -24,6 +31,14 @@ public class ControladorMensaje {
 		return "contact";
 	}
 	
+	@PostMapping("/enviarMensaje")
+	public String enviarMensaje(@RequestParam Usuario usuario,@RequestParam String email,@RequestParam String comentario,@RequestParam Date fechacomentario,Model model) {
+		
+		Mensaje mensaje = new Mensaje (fechacomentario, email, comentario, usuario);
+		repositoriomensaje.save(mensaje);
+		
+		return "index";
+	}
 	
 
 }
