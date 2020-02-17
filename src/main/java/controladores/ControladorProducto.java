@@ -56,6 +56,15 @@ public class ControladorProducto {
 		Producto m4 = new Producto ("HP 34f 34\" ","Monitor","Monitor Curvo LED IPS UltraWide QuadHD FreeSync","",579);
 		repositorioproducto.save(m4);
 		
+		
+		//Consolas
+		Producto c1= new Producto("PS4","Consola","Videoconsola de Sony","",240);
+		repositorioproducto.save(c1);
+		Producto c2= new Producto("Xbox One","Consola","Videoconsola de Microsoft","",200);
+		repositorioproducto.save(c2);
+		Producto c3= new Producto("Nintendo Switch","Consola","Videoconsola portatil de Nintendo","",320);
+		repositorioproducto.save(c3);
+		
 		//Hardware
 		
 		Producto h1 = new Producto ("NEWSKILL Eos","Raton","Raton Gaming","",49);
@@ -74,17 +83,29 @@ public class ControladorProducto {
 		
 		Producto JP1 = new Producto ("Gran Turismo Sport PS4","Juegos","Juego PS4","",30);
 		repositorioproducto.save(JP1);
+		Producto JP2 = new Producto ("Death Stranding","Juegos","Juego PS4","",60);
+		repositorioproducto.save(JP2);
+		Producto JP3 = new Producto ("NBA 2K20","Juegos","Juego PS4","",35);
+		repositorioproducto.save(JP3);
 
 		
 		//Juegos Xbox
 		
 		Producto JX1 = new Producto("Halo 3 Xbox One","Juegos","Juego Xbox","",40);
 		repositorioproducto.save(JX1);
+		Producto JX2 = new Producto("Gears of War 5","Juegos","Juego Xbox","",50);
+		repositorioproducto.save(JX2);
+		Producto JX3 = new Producto("NBA 2K20","Juegos","Juego Xbox","",35);
+		repositorioproducto.save(JX3);
 		
 		//Juegos Nintendo
 		
 		Producto JN1 = new Producto("Pokemon Espada Nintendo Switch","Juegos","Juego Nintendo","",45);
 		repositorioproducto.save(JN1); 
+		Producto JN2 = new Producto("Zelda Breath of the Wild","Juegos","Juego Nintendo","",65);
+		repositorioproducto.save(JN2);
+		Producto JN3 = new Producto("NBA 2K20","Juegos","Juego Nintendo","",30);
+		repositorioproducto.save(JN3);
 
 	}
 	
