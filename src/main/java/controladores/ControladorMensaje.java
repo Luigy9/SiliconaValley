@@ -10,5 +10,7 @@ public class ControladorMensaje {
 	
 	@Autowired
 	private RepositorioMensaje repositoriomensaje;
+	
+	
 
 }

@@ -31,8 +31,30 @@ public class ControladorUsuario {
 
 	}
 	
-	@RequestMapping("/agregarUsuario")//Añadir html donde va 
+	@RequestMapping("/controladorRegistro")
+	public String controladorRegistro () {
+		
+		return "register";
+	}
+	@RequestMapping("/controladorLogin")
+	public String controladorLogin () {
+		
+		return "login";
+	}	
+	@RequestMapping("/agregarUsuario")
 	public String agregarUsuario (Model model) {
+		
+		return "";
+	}
+	
+	@RequestMapping("/modificarUsuario")
+	public String modificarUsuario (Model model) {
+		
+		return "";
+	}
+	
+	@RequestMapping("/borrarUsuario")
+	public String borrarUsuario (Model model) {
 		
 		return "";
 	}
