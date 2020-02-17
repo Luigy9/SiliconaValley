@@ -183,6 +183,10 @@ public class ControladorProducto {
 		return "shop";
 	}
 
+	@RequestMapping("/detallesProducto")
+	public String detallesProducto() {
+		return "product";
+	}
 //	@RequestMapping("")//Añadir html donde va 
 //	public String agregarProducto (Model model) {
 //	
