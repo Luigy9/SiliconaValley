@@ -29,7 +29,7 @@ public class Usuario {
 	private int telefono;
 	private String nombreCompleto;
 	private int codigoPostal;
-	private String contrasena;
+	private String password;
 	@OneToMany(mappedBy="usuario")
 	@Cascade({CascadeType.ALL})
 	private List<Pedido> pedidos = new ArrayList<Pedido>();
@@ -45,7 +45,11 @@ public class Usuario {
 		
 	}
 	
-	public Usuario(String nombreusuario, String email, String direccion, int telefono, String nombreCompleto, int codigoPostal, String contrasena) {
+	public Usuario (String nombreusuario,String password) {
+		this.nombreUsuario = nombreusuario;
+		this.password = password;
+	}
+	public Usuario(String nombreusuario, String email, String direccion, int telefono, String nombreCompleto, int codigoPostal, String password) {
 
 		this.email = email;
 		this.direccion = direccion;
@@ -53,7 +57,7 @@ public class Usuario {
 		this.nombreUsuario = nombreusuario;
 		this.nombreCompleto = nombreCompleto;
 		this.codigoPostal = codigoPostal;
-		this.contrasena = contrasena;
+		this.password = password;
 		
 	}
 	
@@ -113,12 +117,12 @@ public class Usuario {
 		this.codigoPostal = codigoPostal;
 	}
 	
-	public String getContrasena() {
-		return contrasena;
+	public String getPassword() {
+		return password;
 	}
 	
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
+	public void setPassword(String password) {
+		this.password = password;
 	}
     public List<CyV> getCyV() {
 			return cyv;
