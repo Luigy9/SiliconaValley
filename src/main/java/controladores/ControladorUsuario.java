@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import entidades.Usuario;
@@ -27,6 +28,13 @@ public class ControladorUsuario {
 		repositoriousuario.save(usuario1);
 		repositoriousuario.save(usuario2);
 		repositoriousuario.save(usuario3);
+
+	}
+	
+	@RequestMapping("/agregarUsuario")//Añadir html donde va 
+	public String agregarUsuario (Model model) {
+		
+		return "";
 	}
 	
 
