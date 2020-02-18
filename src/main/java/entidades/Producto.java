@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.Cascade;
@@ -26,6 +28,10 @@ public class Producto {
 	@OneToMany(mappedBy="producto")
 	@Cascade({CascadeType.ALL})
 	private List<CyV> cyv = new ArrayList<CyV>();
+	@ManyToOne
+	@Cascade({CascadeType.SAVE_UPDATE})
+    @JoinColumn(name="productos")
+	private List<Producto> productos= new ArrayList<Producto>();
 
 	
 	public Producto() {
@@ -94,6 +100,14 @@ public class Producto {
     public void setCyV(List<CyV> cyv) {
 			this.cyv = cyv;
     }
+    
+	public void setListaProductos(List<Producto> productos) {
+		this.productos=productos;
+	}
+	
+	public List<Producto> getListaProductos() {
+		return productos;
+	}
 	
 	@Override
 	public String toString() {
