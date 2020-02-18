@@ -11,6 +11,18 @@ public class ControladorPedido {
 	
 	@Autowired
 	private RepositorioPedido repositoriopedido;
+	
+	@RequestMapping("/carritoDetalles")//Añadir html donde va 
+	public String carritoDetalles (Model model) {
+		
+		return "/shopping-cart";
+	}
+	
+	@RequestMapping("/carritoPagar")//Añadir html donde va 
+	public String carritoPagar (Model model) {
+		
+		return "/check-out";
+	}
 
 	@RequestMapping("")//Añadir html donde va 
 	public String eliminarProductoCarrito (Model model) {
