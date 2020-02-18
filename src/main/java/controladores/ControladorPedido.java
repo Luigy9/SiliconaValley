@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import repositorios.RepositorioPedido;
 
+@Controller
 public class ControladorPedido {
 	
 	@Autowired
@@ -24,28 +25,28 @@ public class ControladorPedido {
 		return "/check-out";
 	}
 
-	@RequestMapping("")//Añadir html donde va 
-	public String eliminarProductoCarrito (Model model) {
-		
-		return "";
-	}
-	
-	@RequestMapping("")//Añadir html donde va 
-	public String añadirProductoCarrito (Model model) {
-		
-		return "";
-	}
-	
-	@RequestMapping("")//Añadir html donde va 
-	public String sumarProductoCarrito (Model model) {
-		
-		return "";
-	}
-	
-	@RequestMapping("")//Añadir html donde va 
-	public String guardarCarrito (Model model) {
-		
-		return "";
-	}
+//	@RequestMapping("")//Añadir html donde va 
+//	public String eliminarProductoCarrito (Model model) {
+//		
+//		return "";
+//	}
+//	
+//	@RequestMapping("")//Añadir html donde va 
+//	public String añadirProductoCarrito (Model model) {
+//		
+//		return "";
+//	}
+//	
+//	@RequestMapping("")//Añadir html donde va 
+//	public String sumarProductoCarrito (Model model) {
+//		
+//		return "";
+//	}
+//	
+//	@RequestMapping("")//Añadir html donde va 
+//	public String guardarCarrito (Model model) {
+//		
+//		return "";
+//	}
 	
 }

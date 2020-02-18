@@ -30,8 +30,8 @@ public class Producto {
 	private List<CyV> cyv = new ArrayList<CyV>();
 	@ManyToOne
 	@Cascade({CascadeType.SAVE_UPDATE})
-    @JoinColumn(name="productos")
-	private List<Producto> productos= new ArrayList<Producto>();
+	@JoinColumn(name = "pedido")
+	private Pedido pedido;
 
 	
 	public Producto() {
@@ -100,14 +100,6 @@ public class Producto {
     public void setCyV(List<CyV> cyv) {
 			this.cyv = cyv;
     }
-    
-	public void setListaProductos(List<Producto> productos) {
-		this.productos=productos;
-	}
-	
-	public List<Producto> getListaProductos() {
-		return productos;
-	}
 	
 	@Override
 	public String toString() {

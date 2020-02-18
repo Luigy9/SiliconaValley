@@ -27,6 +27,10 @@ public class Pedido {
     @JoinColumn(name="usuario")
 	private Usuario usuario;
 	
+	@OneToMany(mappedBy="pedido")
+	@Cascade({CascadeType.ALL})
+	private List<Producto> productos= new ArrayList<Producto>();
+	
 	public Pedido() {
 		
 	}
@@ -71,6 +75,14 @@ public class Pedido {
 	public void setUsuario (Usuario usuario) {
 		
 		this.usuario = usuario;
+	}
+    
+	public void setListaProductos(List<Producto> productos) {
+		this.productos=productos;
+	}
+	
+	public List<Producto> getListaProductos() {
+		return productos;
 	}
 	
 	@Override
