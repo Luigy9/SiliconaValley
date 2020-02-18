@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import entidades.Producto;
+import entidades.Usuario;
 import repositorios.RepositorioProducto;
 @Controller
 public class ControladorProducto {
@@ -97,63 +99,64 @@ public class ControladorProducto {
 	public String detallesProducto() {
 		return "product";
 	}
-//	@RequestMapping("")//Añadir html donde va 
-//	public String agregarProducto (Model model) {
-//	
-//		return "";
-//	}
-//	
-//	@RequestMapping("")//Añadir html donde va 
-//	public String agregarCarrito( Model model) {
-//	
-//		return "";		
-//	}
-//	
-//	@RequestMapping("")//Añadir html donde va 
-//	public String modificarProducto (Model model) {
-//		
-//		return "";
-//	}
-//	
+	
+	
+	@RequestMapping("/controlWeb")
+	public String agregarProducto (Model model,@RequestParam String nombre, @RequestParam String categoria, 
+			@RequestParam String descripcion, @RequestParam String urlImagen,@RequestParam int precio) {
+	
+		Producto producto = new Producto (nombre,categoria,descripcion,urlImagen,precio);
+		repositorioproducto.save(producto);
+	
+		return "controlWeb";
+	}
+
+	
+	
+	@RequestMapping("/modificarProducto")
+	public String modificarProducto (Model model, @RequestParam Producto producto ,@RequestParam String categoria, @RequestParam int precio) {
+		
+		//Si introduces un 0 en el campo correspondiente se indica que ese atributo no se quiere modificar
+		if("0".equalsIgnoreCase(categoria)) {
+			producto.setCategoria(categoria);
+		}
+		
+		if(precio!=0) {
+			producto.setPrecio(precio);
+		}
+		
+		repositorioproducto.save(producto);
+		
+		return "product";
+	}
+	
+	@RequestMapping("/eliminarProducto")
+	public String eliminarProducto (Model model, @RequestParam Producto producto) {
+		
+		repositorioproducto.delete(producto);
+		
+		return "product";
+	}
+	
+	
+	/*@RequestMapping("") 
+	public String agregarCarrito( Model model) {
+	
+		return "";		
+	}*/
+	
 //	@RequestMapping("")//Añadir html donde va 
 //	public String modificarCarrito (Model model) {
 //		
 //		return "";
 //	}
-//	
-//	@RequestMapping("/buscarCategoriaAsc")//Añadir html donde va 
-//	public String buscarCategoriaAsc () {
-//		
-//		return "shop";
-//	}
-//	
-//	@RequestMapping("")//Añadir html donde va 
-//	public String buscarCategoriaDesc (Model model) {
+	
+	//@RequestMapping("")//Añadir html donde va 
+//	public String eliminarCarrito (Model model) {
 //		
 //		return "";
 //	}
-//	
-//	@RequestMapping("")//Añadir html donde va 
-//	public String buscarPrecioAsc (Model model) {
-//		
-//		return "";
-//	}
-//	
-//	@RequestMapping("")//Añadir html donde va 
-//	public String buscarPrecioDesc (Model model) {
-//		
-//		return "";
-//	}
-//	@RequestMapping("")//Añadir html donde va 
-//	public String buscarValoracionAsc (Model model) {
-//		
-//		return "";
-//	}
-//	
-//	@RequestMapping("")//Añadir html donde va 
-//	public String buscarValoracionDesc (Model model) {
-//		return "";
-//	}
+	
 	
 	
 }
