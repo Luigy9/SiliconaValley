@@ -49,11 +49,11 @@ public class ControladorUsuario {
 		
 		//Si introduces un 0 en el campo correspondiente se indica que ese atributo no se quiere modificar
 		
-		if("0".equalsIgnoreCase(nombreusuario)) {
+		if(!"0".equalsIgnoreCase(nombreusuario)) {
 			usuario.setNombreUsuario(nombreusuario);
 		}
 		
-		if("0".equalsIgnoreCase(direccion)) {
+		if(!"0".equalsIgnoreCase(direccion)) {
 			usuario.setDireccion(direccion);
 		}
 		
@@ -65,7 +65,7 @@ public class ControladorUsuario {
 			usuario.setCodigoPostal(codigoPostal);
 		}
 		
-		if("0".equalsIgnoreCase(password)) {
+		if(!"0".equalsIgnoreCase(password)) {
 			usuario.setPassword(password);
 		}
 		

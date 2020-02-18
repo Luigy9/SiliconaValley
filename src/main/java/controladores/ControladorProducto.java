@@ -117,7 +117,7 @@ public class ControladorProducto {
 	public String modificarProducto (Model model, @RequestParam Producto producto ,@RequestParam String categoria, @RequestParam int precio) {
 		
 		//Si introduces un 0 en el campo correspondiente se indica que ese atributo no se quiere modificar
-		if("0".equalsIgnoreCase(categoria)) {
+		if(!"0".equalsIgnoreCase(categoria)) {
 			producto.setCategoria(categoria);
 		}
 		
