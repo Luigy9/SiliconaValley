@@ -44,13 +44,42 @@ public class ControladorUsuario {
 	}
 	
 	@RequestMapping("/modificarUsuario")
-	public String modificarUsuario (Model model) {
+	public String modificarUsuario (Model model, @RequestParam Usuario usuario,@RequestParam String nombreusuario, @RequestParam String direccion, 
+			@RequestParam int telefono, @RequestParam int codigoPostal, @RequestParam String password) {
+		
+		//Si introduces un 0 en el campo correspondiente se indica que ese atributo no se quiere modificar
+		
+		if("0".equalsIgnoreCase(nombreusuario)) {
+			usuario.setNombreUsuario(nombreusuario);
+		}
+		
+		if("0".equalsIgnoreCase(direccion)) {
+			usuario.setDireccion(direccion);
+		}
+		
+		if(telefono!=0) {
+			usuario.setTelefono(telefono);
+		}
+		
+		if(codigoPostal!=0) {
+			usuario.setCodigoPostal(codigoPostal);
+		}
+		
+		if("0".equalsIgnoreCase(password)) {
+			usuario.setPassword(password);
+		}
+		
+		repositoriousuario.save(usuario);
+		
+		
 		
 		return "";
 	}
 	
 	@RequestMapping("/borrarUsuario")
-	public String borrarUsuario (Model model) {
+	public String borrarUsuario (Model model, @RequestParam Usuario usuario) {
+		
+		repositoriousuario.delete(usuario);
 		
 		return "";
 	}
