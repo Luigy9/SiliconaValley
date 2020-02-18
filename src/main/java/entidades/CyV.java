@@ -20,10 +20,12 @@ public class CyV {
 	private long idCyV;
 	private Date fecha;
 	private String contenido;
+	
 	@ManyToOne
 	@Cascade({CascadeType.SAVE_UPDATE})
     @JoinColumn(name="usuario")
 	private Usuario usuario;
+	
 	@ManyToOne
 	@Cascade({CascadeType.SAVE_UPDATE})
     @JoinColumn(name="producto")
