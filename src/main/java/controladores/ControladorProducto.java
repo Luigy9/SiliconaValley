@@ -144,13 +144,13 @@ public class ControladorProducto {
 	
 	@RequestMapping("/adminProducto")
 	public String adminProducto(Model model) {
-		
+		model.addAttribute("productos",repositorioproducto.findAll());
 		return "adminProducto";
 	}
 	
 	@RequestMapping("/eliminarProducto")
 	public String eliminarProducto (Model model, @RequestParam Producto producto) {
-		
+
 		repositorioproducto.delete(producto);
 		
 		return "product";

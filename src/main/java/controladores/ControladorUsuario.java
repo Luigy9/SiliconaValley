@@ -33,6 +33,7 @@ public class ControladorUsuario {
 		return "login";
 	}	
 	
+
 	
 	@PostMapping("/agregarUsuario")
 	public String agregarUsuario (@RequestParam String nombreUsuario,@RequestParam String password,Model model) {
@@ -86,7 +87,7 @@ public class ControladorUsuario {
 	
 	@RequestMapping("/adminUsuario")
 	public String adminUsuario(Model model) {
-		
+		model.addAttribute("usuarios",repositoriousuario.findAll());
 		return "adminUsuario";
 	}
 	
