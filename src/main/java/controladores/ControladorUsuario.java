@@ -19,6 +19,7 @@ import repositorios.RepositorioUsuario;
 public class ControladorUsuario {
 	
 	@Autowired
+	
 	private RepositorioUsuario repositoriousuario;
 
 	
