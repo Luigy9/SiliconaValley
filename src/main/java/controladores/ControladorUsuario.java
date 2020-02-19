@@ -84,5 +84,11 @@ public class ControladorUsuario {
 		return "";
 	}
 	
+	@RequestMapping("/adminUsuario")
+	public String adminUsuario(Model model) {
+		
+		return "adminUsuario";
+	}
+	
 
 }

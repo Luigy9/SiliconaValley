@@ -212,24 +212,53 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
-                        <h2>Register</h2>
-                        <form class="form-inline" method="post" action="/agregarUsuario">
-                        
-                       
+                        <h2>Modificar Usuario</h2>
+                        <form class="form-inline" method="post" action="/modificarUsuario">
+                       	        <div class="col-lg-6">
+                                    <p>
+	                                    <select class="form-control" name="usuario" required>
+	                                    {{#usuarios}}
+	                                        <option value="{{id}}">{{nombreUsuario}}</option>
+	                                    {{/usuarios}}
+	                                    {{^usuarios}}
+	                                    <option disabled>
+	                                    No existe ningun usuario
+	                                    </option>
+	                                    {{/usuarios}}
+	                                    </select>
+                                    </p>
+                               </div>
+
                             <div class="group-input">
-                                <label for="Nombre de Usuario">Username *</label>
-                                <input type="text" name="nombreUsuario">
+                                <label for="nombreusuario">Nombre</label>
+                                <input type="text" name="nombreusuario">
                             </div>
+                            
                             <div class="group-input">
-                                <label for="pass">Password *</label>
+                                <label for="direccion">direccion</label>
+                                <input type="text" name="direccion">
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="telefono">Telefono</label>
+                                <input type="number" name="telefono">
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="codigoPostal">codigo Postal</label>
+                                <input type="number" name="codigoPostal">
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="password">password</label>
                                 <input type="password" name="password">
                             </div>
+                            
 
-                            <button type="submit" class="site-btn register-btn">REGISTRARSE</button>
-                        </form>
-                        <div class="switch-login">
-                            <a href="./login.html" class="or-login">Si ya estás registrado, identificate</a>
-                        </div>
+                            <button type="submit" class="site-btn register-btn">Modificar</button>
+                            <button type="submit" class="site-btn register-btn">Borrar</button>
+							</form>
+
 
                     </div>
                 </div>

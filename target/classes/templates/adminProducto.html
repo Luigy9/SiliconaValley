@@ -218,7 +218,7 @@
                                                 	
                                     <div class="col-lg-6">
                                     <p>
-                                    <select class="form-control" name="productos" required>
+                                    <select class="form-control">
                                     {{#productos}}
                                         <option value="{{idProducto}}">{{nombre}}</option>
                                     {{/productos}}
@@ -231,7 +231,7 @@
                                     </p>
                                     </div>
                                     <div class="col-lg-6">
-                        <form class="form-inline" method="post" action="/agregarUsuario">
+                        <form class="form-inline" method="post" action="/modificarProducto">
 
 							
                             <div class="group-input">
@@ -261,6 +261,7 @@
                             
 
                             <button type="submit" class="site-btn register-btn">Modificar</button>
+                            <button type="submit" class="site-btn register-btn">Borrar</button>
                         </form>
 
 
