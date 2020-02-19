@@ -96,7 +96,11 @@ public class ControladorProducto {
 	}
 
 	@RequestMapping("/detallesProducto")
-	public String detallesProducto() {
+	public String detallesProducto(Model model, @RequestParam long id) {
+		
+		model.addAttribute("producto", repositorioproducto.findByIdProducto(id));
+		
+		
 		return "product";
 	}
 	
