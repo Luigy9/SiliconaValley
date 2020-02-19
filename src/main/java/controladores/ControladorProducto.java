@@ -150,10 +150,9 @@ public class ControladorProducto {
 	
 	@RequestMapping("/eliminarProducto")
 	public String eliminarProducto (Model model, @RequestParam Producto producto) {
-
 		repositorioproducto.delete(producto);
 		
-		return "product";
+		return "adminProducto";
 	}
 	
 	/*@RequestMapping("/buscarPrecio")

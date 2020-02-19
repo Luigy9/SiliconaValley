@@ -214,7 +214,7 @@
                     <div class="register-form">
                         <h2>Modificar Usuario</h2>
                         <form class="form-inline" method="post" action="/modificarUsuario">
-                       	        <div class="col-lg-6">
+                        	        <div class="col-lg-6">
                                     <p>
 	                                    <select class="form-control" name="usuario" required>
 	                                    {{#usuarios}}
@@ -227,34 +227,35 @@
 	                                    {{/usuarios}}
 	                                    </select>
                                     </p>
-                               </div>
-
+                                    </div>
+					{{#usuarios}}
                             <div class="group-input">
                                 <label for="nombreusuario">Nombre</label>
-                                <input type="text" name="nombreusuario">
+                                <input type="text" name="nombreUsuario" value="{{nombreUsuario}}" class="form-control"required />
                             </div>
-                            
+                    {{/usuarios}}
                             <div class="group-input">
                                 <label for="direccion">direccion</label>
-                                <input type="text" name="direccion">
+                                <input type="text" name="{{direccion}}">
                             </div>
                             
                             <div class="group-input">
                                 <label for="telefono">Telefono</label>
-                                <input type="number" name="telefono">
+                                <input type="number" name="{{telefono}}">
                             </div>
                             
                             <div class="group-input">
                                 <label for="codigoPostal">codigo Postal</label>
-                                <input type="number" name="codigoPostal">
+                                <input type="number" name="{{codigoPostal}}">
                             </div>
                             
                             <div class="group-input">
                                 <label for="password">password</label>
-                                <input type="password" name="password">
+                                <input type="password" name="{{password}}">
                             </div>
                             
-
+					{{/usuarios}}
+					
                             <button type="submit" class="site-btn register-btn">Modificar</button>
                             <button type="submit" class="site-btn register-btn">Borrar</button>
 							</form>
