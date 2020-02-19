@@ -142,6 +142,30 @@ public class ControladorProducto {
 		return "product";
 	}
 	
+	@RequestMapping("/buscarPrecio")
+	public String buscarPorPrecio(Model model, @RequestParam String orden) {
+		
+		List<Producto> productos;
+		
+		if(orden.equalsIgnoreCase("buscar por precio ascendente")) {
+			productos = repositorioproducto.findByPrecioAsc();
+		}else {
+			productos = repositorioproducto.findByPrecioDesc();
+		}
+		
+		model.addAttribute("productos", productos);
+		return "shop";
+		
+	}
+	
+	@RequestMapping("/buscarNombre")
+	public String buscarPorNombre(Model model, @RequestParam String nombre) {
+		
+		List<Producto> productos = repositorioproducto.findByNombre(nombre);
+		model.addAttribute("productos", productos);
+		return "shop";
+	}
+	
 	
 	/*@RequestMapping("") 
 	public String agregarCarrito( Model model) {
