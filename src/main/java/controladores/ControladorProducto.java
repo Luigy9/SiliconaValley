@@ -118,7 +118,8 @@ public class ControladorProducto {
 	
 	
 	@RequestMapping("/modificarProducto")
-	public String modificarProducto (Model model,@RequestParam Producto producto ,@RequestParam String nombre, @RequestParam String categoria,@RequestParam String Descripcion, @RequestParam int precio) {
+	public String modificarProducto (Model model,@RequestParam Producto producto ,@RequestParam String nombre, @RequestParam String categoria,
+			@RequestParam String Descripcion, @RequestParam int precio, @RequestParam String urlImagen) {
 		
 		//Si introduces un 0 en el campo correspondiente se indica que ese atributo no se quiere modificar
 		if(!"0".equalsIgnoreCase(categoria)) {
