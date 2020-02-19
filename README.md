@@ -39,51 +39,51 @@ La aplicación integrará los servicios internos:
   
   **-Daniel Santiago Muñoz:** d.santiagom@alumnos.urjc.es, dsantiagom95 
   
-## **Diagrama de navegacion:**
+## **Capturas de pantalla:**
 
   **Inicio** 
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/inicio.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/inicio.png)
   
   **Ratones** 
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ratones.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ratones.png)
   
   **Teclados** 
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/teclados.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/teclados.png)
   
   **Monitores** 
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/monitores.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/monitores.png)
   
   **Sobremesa** 
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/sobremesa.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/sobremesa.png)
   
   **Portatiles** 
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/portatiles.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/portatiles.png)
   
   **Consolas** 
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/consolas.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/consolas.png)
   
   **Juegos PS4** 
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ps4.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ps4.png)
   
   **Juegos XOBOX ONE**
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/xbox.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/xbox.png)
   
   **Juegos Nintendo Switch**
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/nintendo.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/nintendo.png)
   
   **Contacto**
   
-  !(https://github.com/Luigy9/SiliconaValley/blob/master/capturas/contacto.png)
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/contacto.png)
   
   
   
