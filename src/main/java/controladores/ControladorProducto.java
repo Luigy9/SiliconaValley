@@ -18,8 +18,15 @@ public class ControladorProducto {
 	
 	@Autowired
 	private RepositorioProducto repositorioproducto;
+		
 	
-	
+	@RequestMapping("/accederProducto")
+	public String accederProducto(Model model) {
+		
+		model.addAttribute("productos",repositorioproducto.findAll());
+		
+		return "adminProducto";
+	}
 	
 	@RequestMapping("/buscarCategoriaSobremesa")
 	public String buscarCategoriaSobremesa (Model model) {
