@@ -23,7 +23,7 @@ public class Producto {
 	private String nombre;
 	private String categoria;
 	private String descripcion;
-	private double precio;
+	private int precio;
 	private String urlImagen;
 	@OneToMany(mappedBy="producto")
 	@Cascade({CascadeType.ALL})
@@ -78,7 +78,7 @@ public class Producto {
 		this.descripcion=descripcion;
 	}
 	
-	public double getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
 	
