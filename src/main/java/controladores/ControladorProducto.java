@@ -149,7 +149,7 @@ public class ControladorProducto {
 		return "product";
 	}
 	
-	@RequestMapping("/buscarPrecio")
+	/*@RequestMapping("/buscarPrecio")
 	public String buscarPorPrecio(Model model, @RequestParam String orden) {
 		
 		List<Producto> productos;
@@ -163,7 +163,7 @@ public class ControladorProducto {
 		model.addAttribute("productos", productos);
 		return "shop";
 		
-	}
+	}*/
 	
 	@RequestMapping("/buscarNombre")
 	public String buscarPorNombre(Model model, @RequestParam String nombre) {
