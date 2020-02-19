@@ -74,7 +74,7 @@ public class ControladorUsuario {
 		
 		
 		
-		return "";
+		return "adminUsuario";
 	}
 	
 	@RequestMapping("/borrarUsuario")
@@ -82,7 +82,7 @@ public class ControladorUsuario {
 		
 		repositoriousuario.delete(usuario);
 		
-		return "";
+		return "adminUsuario";
 	}
 	
 	@RequestMapping("/adminUsuario")
