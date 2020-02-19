@@ -37,7 +37,53 @@ La aplicación integrará los servicios internos:
   
   **-Luis Alberto Riaño Osorio:** la.riano@alumnos.urjc.es, luigy9 .
   
-  **-Daniel Santiago Muñoz:** d.santiagom@alumnos.urjc.es, dsantiagom95 .
+  **-Daniel Santiago Muñoz:** d.santiagom@alumnos.urjc.es, dsantiagom95 
+  
+## **Capturas de pantalla:**
+
+  **Inicio** 
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/inicio.png)
+  
+  **Ratones** 
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ratones.png)
+  
+  **Teclados** 
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/teclados.png)
+  
+  **Monitores** 
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/monitores.png)
+  
+  **Sobremesa** 
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/sobremesa.png)
+  
+  **Portatiles** 
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/portatiles.png)
+  
+  **Consolas** 
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/consolas.png)
+  
+  **Juegos PS4** 
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ps4.png)
+  
+  **Juegos XOBOX ONE**
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/xbox.png)
+  
+  **Juegos Nintendo Switch**
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/nintendo.png)
+  
+  **Contacto**
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/contacto.png)
   
   
   

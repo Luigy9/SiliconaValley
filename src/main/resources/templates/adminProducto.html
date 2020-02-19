@@ -7,7 +7,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>SiliconaValley</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -45,8 +45,10 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                     <a href="/controladorLogin" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    <a href="/controladorLogin" class="login-panel"><i class="fa fa-user"></i>Login</a>
                     <a href="/controladorRegistro" class="login-panel"><i class="fa fa-user"></i>Registro</a>
+                    <a href="/adminUsuario" class="login-panel"><i class="fa fa-user"></i>AdminU</a>
+                    <a href="/adminProducto" class="login-panel"><i class="fa fa-user"></i>AdminP</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
@@ -69,7 +71,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="/">
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>    
@@ -212,19 +214,28 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
+            
                         <h2>Modificar Producto</h2>
                         
                                                 	
-                       		<select name="my_html_select_box">
+                                    <div class="col-lg-6">
+                                    <p>
+                                    <select class="form-control">
+                                    {{#productos}}
+                                        <option value="{{idProducto}}">{{nombre}}</option>
+                                    {{/productos}}
+                                    {{^productos}}
+                                    <option disabled>
+                                    No hay items
+                                    </option>
+                                    {{/productos}}
+                                    </select>
+                                    </p>
+                                    </div>
+                                    <div class="col-lg-6">
+                        
 
-								<option> New York </option>
-								<option> Bucharest </option>
-								<option> Madrid </option>
-						
-							</select>
-                        <form class="form-inline" method="post" action="/agregarUsuario">
-
-							
+							 <form class="form-inline" method="post" action="/modificarProducto">
                             <div class="group-input">
                                 <label for="Nombre de Producto">Nombre</label>
                                 <input type="text" name="nombre">
@@ -252,10 +263,9 @@
                             
 
                             <button type="submit" class="site-btn register-btn">Modificar</button>
+                            <button type="submit" class="site-btn register-btn">Borrar</button>
                         </form>
-                        <div class="switch-login">
-                            <a href="./login.html" class="or-login">Si ya estás registrado, identificate</a>
-                        </div>
+
 
                     </div>
                 </div>

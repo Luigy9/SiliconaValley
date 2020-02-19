@@ -7,7 +7,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>SiliconaValley</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -45,8 +45,10 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                     <a href="/controladorLogin" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    <a href="/controladorLogin" class="login-panel"><i class="fa fa-user"></i>Login</a>
                     <a href="/controladorRegistro" class="login-panel"><i class="fa fa-user"></i>Registro</a>
+                    <a href="/adminUsuario" class="login-panel"><i class="fa fa-user"></i>AdminU</a>
+                    <a href="/adminProducto" class="login-panel"><i class="fa fa-user"></i>AdminP</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
@@ -69,7 +71,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="/">
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>    
@@ -212,24 +214,53 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
-                        <h2>Register</h2>
-                        <form class="form-inline" method="post" action="/agregarUsuario">
-                        
-                       
+                        <h2>Modificar Usuario</h2>
+                        <form class="form-inline" method="post" action="/modificarUsuario">
+                        	        <div class="col-lg-6">
+                                    <p>
+	                                    <select class="form-control" name="usuario" required>
+	                                    {{#usuarios}}
+	                                        <option value="{{id}}">{{nombreUsuario}}</option>
+	                                    {{/usuarios}}
+	                                    {{^usuarios}}
+	                                    <option disabled>
+	                                    No existe ningun usuario
+	                                    </option>
+	                                    {{/usuarios}}
+	                                    </select>
+                                    </p>
+                                    </div>
+					{{#usuarios}}
                             <div class="group-input">
-                                <label for="Nombre de Usuario">Username *</label>
-                                <input type="text" name="nombreUsuario">
+                                <label for="nombreusuario">Nombre</label>
+                                <input type="text" name="nombreUsuario" value="{{nombreUsuario}}" class="form-control"required />
                             </div>
+                    
                             <div class="group-input">
-                                <label for="pass">Password *</label>
-                                <input type="password" name="password">
+                                <label for="direccion">direccion</label>
+                                <input type="text" name="{{nombreUsuario}}">
                             </div>
+                            
+                            <div class="group-input">
+                                <label for="telefono">Telefono</label>
+                                <input type="number" name="telefono">
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="codigoPostal">codigo Postal</label>
+                                <input type="number" name="{{codigoPostal}}">
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="password">password</label>
+                                <input type="password" name="{{password}}">
+                            </div>
+                            
+					{{/usuarios}} 
+                            <button type="submit" class="site-btn register-btn">Modificar</button>
+                            <button type="submit" class="site-btn register-btn">Borrar</button>
+							</form>
 
-                            <button type="submit" class="site-btn register-btn">REGISTRARSE</button>
-                        </form>
-                        <div class="switch-login">
-                            <a href="./login.html" class="or-login">Si ya estás registrado, identificate</a>
-                        </div>
 
                     </div>
                 </div>

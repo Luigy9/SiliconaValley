@@ -33,6 +33,7 @@ public class ControladorUsuario {
 		return "login";
 	}	
 	
+
 	
 	@PostMapping("/agregarUsuario")
 	public String agregarUsuario (@RequestParam String nombreUsuario,@RequestParam String password,Model model) {
@@ -73,7 +74,7 @@ public class ControladorUsuario {
 		
 		
 		
-		return "";
+		return "adminUsuario";
 	}
 	
 	@RequestMapping("/borrarUsuario")
@@ -81,7 +82,13 @@ public class ControladorUsuario {
 		
 		repositoriousuario.delete(usuario);
 		
-		return "";
+		return "adminUsuario";
+	}
+	
+	@RequestMapping("/adminUsuario")
+	public String adminUsuario(Model model) {
+		model.addAttribute("usuarios",repositoriousuario.findAll());
+		return "adminUsuario";
 	}
 	
 

@@ -7,7 +7,7 @@
     <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fashi | Template</title>
+    <title>SiliconaValley</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -41,12 +41,14 @@
                     </div>
                     <div class="phone-service">
                         <i class=" fa fa-phone"></i>
-                        900 65 54 28
+                        655 478 221
                     </div>
                 </div>
                 <div class="ht-right">
                     <a href="/controladorLogin" class="login-panel"><i class="fa fa-user"></i>Login</a>
                     <a href="/controladorRegistro" class="login-panel"><i class="fa fa-user"></i>Registro</a>
+                    <a href="/adminUsuario" class="login-panel"><i class="fa fa-user"></i>AdminU</a>
+                    <a href="/adminProducto" class="login-panel"><i class="fa fa-user"></i>AdminP</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
@@ -69,7 +71,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="/">
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>
@@ -130,8 +132,8 @@
                                         <h5>$120.00</h5>
                                     </div>
                                     <div class="select-button">
-                                        <a href="/carrito" class="primary-btn view-card">SHOPPING CART</a>
-                                        <a href="/carritoPagar" class="primary-btn checkout-btn">CHECK OUT</a>
+                                        <a href="/carrito" class="primary-btn view-card">Carrito</a>
+                                        <a href="/carritoPagar" class="primary-btn checkout-btn">Pagar</a>
                                     </div>
                                 </div>
                             </li>
@@ -197,8 +199,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Contact</span>
+                        <a href="#"><i class="fa fa-home"></i> Inicio</a>
+                        <span>Contacto</span>
                     </div>
                 </div>
             </div>
@@ -228,9 +230,8 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="contact-title">
-                        <h4>Contacts Us</h4>
-                        <p>Contrary to popular belief, Lorem Ipsum is simply random text. It has roots in a piece of
-                            classical Latin literature from 45 BC, maki years old.</p>
+                        <h4>Contáctenos</h4>
+                        
                     </div>
                     <div class="contact-widget">
                         <div class="cw-item">
@@ -238,8 +239,8 @@
                                 <i class="ti-location-pin"></i>
                             </div>
                             <div class="ci-text">
-                                <span>Address:</span>
-                                <p>60-49 Road 11378 New York</p>
+                                <span>Dirección:</span>
+                                <p>Calle Tulipán S/N</p>
                             </div>
                         </div>
                         <div class="cw-item">
@@ -247,8 +248,8 @@
                                 <i class="ti-mobile"></i>
                             </div>
                             <div class="ci-text">
-                                <span>Phone:</span>
-                                <p>+65 11.188.888</p>
+                                <span>Teléfono:</span>
+                                <p>+34 655 478 221</p>
                             </div>
                         </div>
                         <div class="cw-item">
@@ -257,7 +258,7 @@
                             </div>
                             <div class="ci-text">
                                 <span>Email:</span>
-                                <p>hellocolorlib@gmail.com</p>
+                                <p>sat@siliconavalley.com</p>
                             </div>
                         </div>
                     </div>
@@ -265,8 +266,8 @@
                 <div class="col-lg-6 offset-lg-1">
                     <div class="contact-form">
                         <div class="leave-comment">
-                            <h4>Leave A Comment</h4>
-                            <p>Our staff will call back later and answer your questions.</p>
+                            <h4>Déjanos un comentario</h4>
+                            <p>Os responderemos lo antes posible</p>
                             <form action="/enviarMensaje" class="comment-form" method="post">
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -277,22 +278,22 @@
                                     {{/usuarios}}
                                     {{^usuarios}}
                                     <option disabled>
-                                    No existe ninguna ciudad
+                                    No existe ningun usuario
                                     </option>
                                     {{/usuarios}}
                                     </select>
                                     </p>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="Your email" name="email">
+                                        <input type="text" placeholder="Email" name="email">
                                     </div>
                                     <div class="col-lg-12">
-                                        <textarea placeholder="Your message" name="comentario"></textarea>
+                                        <textarea placeholder="Mensaje" name="comentario"></textarea>
                                         <p>
 						<b>Fecha</b><br /> 
 						<input type="date" name="fechacomentario" max="2020-4-31" class="form-control" required />
 					</p>
-                                        <button type="submit" class="site-btn">Send message</button>
+                                        <button type="submit" class="site-btn">Enviar mensaje</button>
                                     </div>
                                 </div>
                             </form>
@@ -362,23 +363,22 @@
                 </div>
                 <div class="col-lg-2 offset-lg-1">
                     <div class="footer-widget">
-                        <h5>Information</h5>
+                        <h5>Información</h5>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Serivius</a></li>
+                            <li><a href="#">Sobre Nosotros</a></li>
+                            <li><a href="#">Carrito</a></li>
+                            <li><a href="/accederContacto">Contacto</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="footer-widget">
-                        <h5>My Account</h5>
+                        <h5>Mi cuenta</h5>
                         <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Mi perfil</a></li>
+                            <li><a href="/accederContacto">Contacto</a></li>
+                            <li><a href="#">Carrito</a></li>
+                            <li><a href="7">Tienda</a></li>
                         </ul>
                     </div>
                 </div>
