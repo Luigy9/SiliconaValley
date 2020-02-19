@@ -43,47 +43,86 @@ La aplicación integrará los servicios internos:
 
   **Inicio** 
   
+  Aqui podemos ver la pagina inicio de la aplicación
+  
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/inicio.png)
   
   **Ratones** 
+  
+  Aqui podemos ver los productos que se encuentran dentro de la categoría ratones
   
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ratones.png)
   
   **Teclados** 
   
+  Aqui podemos ver los productos que se encuentran dentro de la categoría teclados
+  
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/teclados.png)
   
   **Monitores** 
+  
+  Aqui podemos ver los productos que se encuentran dentro de la categoría monitores
   
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/monitores.png)
   
   **Sobremesa** 
   
+  Aqui podemos ver los productos que se encuentran dentro de la categoría sobremesa
+  
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/sobremesa.png)
   
   **Portatiles** 
+  
+  Aqui podemos ver los productos que se encuentran dentro de la categoría portatiles
   
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/portatiles.png)
   
   **Consolas** 
   
+  Aqui podemos ver los productos que se encuentran dentro de la categoría consolas
+  
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/consolas.png)
   
   **Juegos PS4** 
+  
+  Aqui podemos ver los productos que se encuentran dentro de la categoría juegos ps4
   
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ps4.png)
   
   **Juegos XOBOX ONE**
   
+  Aqui podemos ver los productos que se encuentran dentro de la categoría juegos xbox one
+  
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/xbox.png)
   
   **Juegos Nintendo Switch**
+  
+  Aqui podemos ver los productos que se encuentran dentro de la categoría juegos nintendo switch
   
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/nintendo.png)
   
   **Contacto**
   
+  Aqui podemos ver la página contacto de la aplicación
+  
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/contacto.png)
   
+  **Carrito**
+  
+  Aqui podemos ver la pagina del carrito de la aplicación
+  
+  ![Captura]()
   
   
+ ## **Diagrama de navegación:**
+ 
+En el diagrama de navegación podemos ver la parte amarilla, correspondiente a la parte pública de la aplicacion, y la parte       verde, correspondiente a la parte privada de la aplicación. En cuanto a la navegacion por la página, todas las paginas tienen una relacion bidireccional, pudiendo ir a las demás páginas sin ningun problema.
+
+![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/diagrama.png)
+
+
+ ## **Modelo de datos:**
+ 
+ En cuanto al modelo de datos, es el siguiente:
+  
+ ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/uml.png)
