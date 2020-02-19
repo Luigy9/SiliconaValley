@@ -43,47 +43,47 @@ La aplicación integrará los servicios internos:
 
   **Inicio** 
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/inicio.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/inicio.png)
   
   **Ratones** 
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ratones.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ratones.png)
   
   **Teclados** 
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/teclados.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/teclados.png)
   
   **Monitores** 
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/monitores.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/monitores.png)
   
   **Sobremesa** 
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/sobremesa.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/sobremesa.png)
   
   **Portatiles** 
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/portatiles.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/portatiles.png)
   
   **Consolas** 
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/consolas.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/consolas.png)
   
   **Juegos PS4** 
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ps4.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ps4.png)
   
   **Juegos XOBOX ONE**
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/xbox.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/xbox.png)
   
   **Juegos Nintendo Switch**
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/nintendo.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/nintendo.png)
   
   **Contacto**
   
-  https://github.com/Luigy9/SiliconaValley/blob/master/capturas/contacto.png
+  (https://github.com/Luigy9/SiliconaValley/blob/master/capturas/contacto.png)
   
   
   
