@@ -118,7 +118,7 @@ public class ControladorProducto {
 	
 	
 	@RequestMapping("/modificarProducto")
-	public String modificarProducto (Model model, @RequestParam Producto producto ,@RequestParam String categoria, @RequestParam int precio) {
+	public String modificarProducto (Model model,@RequestParam Producto producto ,@RequestParam String nombre, @RequestParam String categoria,@RequestParam String Descripcion, @RequestParam int precio) {
 		
 		//Si introduces un 0 en el campo correspondiente se indica que ese atributo no se quiere modificar
 		if(!"0".equalsIgnoreCase(categoria)) {
@@ -132,6 +132,12 @@ public class ControladorProducto {
 		repositorioproducto.save(producto);
 		
 		return "product";
+	}
+	
+	@RequestMapping("/adminProducto")
+	public String adminProducto(Model model) {
+		
+		return "adminProducto";
 	}
 	
 	@RequestMapping("/eliminarProducto")
