@@ -45,8 +45,6 @@ public class Usuario {
 		
 	}
 	
-
-	
 	public Usuario (String nombreusuario,String password) {
 		this.nombreUsuario = nombreusuario;
 		this.password = password;

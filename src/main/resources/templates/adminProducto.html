@@ -212,25 +212,16 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
-             
                         <h2>Modificar Producto</h2>
                         
                                                 	
-                                    <div class="col-lg-6">
-                                    <p>
-                                    <select class="form-control" name="productos" required>
-                                    {{#productos}}
-                                        <option value="{{idProducto}}">{{nombre}}</option>
-                                    {{/productos}}
-                                    {{^productos}}
-                                    <option disabled>
-                                    No hay items
-                                    </option>
-                                    {{/productos}}
-                                    </select>
-                                    </p>
-                                    </div>
-                                    <div class="col-lg-6">
+                       		<select name="my_html_select_box">
+
+								<option> New York </option>
+								<option> Bucharest </option>
+								<option> Madrid </option>
+						
+							</select>
                         <form class="form-inline" method="post" action="/agregarUsuario">
 
 							
@@ -262,7 +253,9 @@
 
                             <button type="submit" class="site-btn register-btn">Modificar</button>
                         </form>
-
+                        <div class="switch-login">
+                            <a href="./login.html" class="or-login">Si ya estás registrado, identificate</a>
+                        </div>
 
                     </div>
                 </div>

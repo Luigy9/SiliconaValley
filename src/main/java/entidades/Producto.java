@@ -38,7 +38,7 @@ public class Producto {
 		
 	}
 	
-	public Producto(String nombre, String categoria, String descripcion, String urlImagen,double precio) {
+	public Producto(String nombre, String categoria, String descripcion, String urlImagen,int precio) {
 		this.nombre = nombre;
 		this.categoria=categoria;
 		this.descripcion=descripcion;
@@ -89,7 +89,7 @@ public class Producto {
 	public void setUrlImagen(String urlImagen) {
 		this.urlImagen=urlImagen;
 	}
-	public void setPrecio(double precio) {
+	public void setPrecio(int precio) {
 		this.precio=precio;
 	}
 	
