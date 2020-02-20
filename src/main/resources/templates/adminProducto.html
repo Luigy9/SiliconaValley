@@ -74,7 +74,7 @@
                             <a href="/">
                                 <img src="img/logo.png" alt="">
                             </a>
-                        </div>    
+                        </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
                         <div class="advanced-search">
@@ -87,57 +87,17 @@
                     </div>
                     <div class="col-lg-3 text-right col-md-3">
                         <ul class="nav-right">
-                            <li class="heart-icon"><a href="#">
-                                <i class="icon_heart_alt"></i>
-                                <span>1</span>
-                            </a>
-                            </li>
-                            <li class="cart-icon"><a href="#">
-                                <i class="icon_bag_alt"></i>
-                                <span>3</span>
-                            </a>
-                            <div class="cart-hover">
-                                <div class="select-items">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                <td class="si-text">
-                                                    <div class="product-selected">
-                                                        <p>$60.00 x 1</p>
-                                                        <h6>Kabino Bedside Table</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="si-close">
-                                                    <i class="ti-close"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                <td class="si-text">
-                                                    <div class="product-selected">
-                                                        <p>$60.00 x 1</p>
-                                                        <h6>Kabino Bedside Table</h6>
-                                                    </div>
-                                                </td>
-                                                <td class="si-close">
-                                                    <i class="ti-close"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="select-total">
-                                    <span>total:</span>
-                                    <h5>$120.00</h5>
-                                </div>
-                                <div class="select-button">
-                                   <a href="/carrito" class="primary-btn view-card">SHOPPING CART</a>
+                            <li class="cart-icon"><a href="/carritoDetalles">
+                                    <i class="icon_bag_alt"></i>
+                                    <span>3</span>
+                                </a>
+                                <div class="cart-hover">
+                                    <div class="select-button">
+                                       <a href="/carritoDetalles" class="primary-btn view-card">SHOPPING CART</a>
                                         <a href="/carritoPagar" class="primary-btn checkout-btn">CHECK OUT</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                            <li class="cart-price">$150.00</li>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -217,10 +177,10 @@
             
                         <h2>Modificar Producto</h2>
                         
-                                                	
+                                    <form class="form-inline" method="post" action="/modificarProducto">            	
                                     <div class="col-lg-6">
                                     <p>
-                                    <select class="form-control">
+                                    <select class="form-control" name="idProducto" required>
                                     {{#productos}}
                                         <option value="{{idProducto}}">{{nombre}}</option>
                                     {{/productos}}
@@ -232,39 +192,34 @@
                                     </select>
                                     </p>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-8">
                         
 
-							 <form class="form-inline" method="post" action="/modificarProducto">
-                            <div class="group-input">
-                                <label for="Nombre de Producto">Nombre</label>
-                                <input type="text" name="nombre">
+							                                     
+                            <button type="submit" class="site-btn register-btn" >Modificar</button>
                             </div>
-                            
-                            <div class="group-input">
-                                <label for="Categoria">Categoria</label>
-                                <input type="text" name="cagegoria">
-                            </div>
-                            
-                            <div class="group-input">
-                                <label for="Descripcion">Descripcion</label>
-                                <input type="text" name="Descripcion">
-                            </div>
-                            
-                            <div class="group-input">
-                                <label for="Precio">Precio</label>
-                                <input type="number" name="Precio">
-                            </div>
-                            
-                            <div class="group-input">
-                                <label for="urlImagen">urlImagen</label>
-                                <input type="text" name="urlImagen">
-                            </div>
-                            
+                            <h2 style="visibility: hidden"> Modificar Producto</h2>
 
-                            <button type="submit" class="site-btn register-btn">Modificar</button>
+                                    <form class="form-inline" method="post" action="/eliminarProducto">            	
+                                    <div class="col-lg-6">
+                                    <p>
+                                    <select class="form-control" name="idProducto" required>
+                                    {{#productos}}
+                                        <option value="{{idProducto}}">{{nombre}}</option>
+                                    {{/productos}}
+                                    {{^productos}}
+                                    <option disabled>
+                                    No hay items
+                                    </option>
+                                    {{/productos}}
+                                    </select>
+                                    </p>
+                                    </div>
+                                    <div class="col-lg-8">                        
+                            
                             <button type="submit" class="site-btn register-btn">Borrar</button>
-                        </form>
+                        	
+                        	</form>
 
 
                     </div>

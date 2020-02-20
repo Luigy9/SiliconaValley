@@ -100,6 +100,14 @@ public class Producto {
     public void setCyV(List<CyV> cyv) {
 			this.cyv = cyv;
     }
+    
+	public Pedido getPedido() {
+		return pedido;
+	}
+	
+	public void setPedido(Pedido pedido) {
+		this.pedido=pedido;
+	}
 	
 	@Override
 	public String toString() {

@@ -87,18 +87,13 @@
                     </div>
                     <div class="col-lg-3 text-right col-md-3">
                         <ul class="nav-right">
-                            <li class="heart-icon"><a href="#">
-                                    <i class="icon_heart_alt"></i>
-                                    <span>1</span>
-                                </a>
-                            </li>
-                            <li class="cart-icon"><a href="#">
+                            <li class="cart-icon"><a href="/carritoDetalles">
                                     <i class="icon_bag_alt"></i>
                                     <span>3</span>
                                 </a>
                                 <div class="cart-hover">
                                     <div class="select-button">
-                                        <a href="/carritoDetalles" class="primary-btn view-card">SHOPPING CART</a>
+                                       <a href="/carritoDetalles" class="primary-btn view-card">SHOPPING CART</a>
                                         <a href="/carritoPagar" class="primary-btn checkout-btn">CHECK OUT</a>
                                     </div>
                                 </div>
@@ -115,14 +110,14 @@
                         <i class="ti-menu"></i>
                         <span>Categorías</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="./shop.html">PC Sobremesa Gaming</a></li>
-                            <li><a href="./shop.html">Portatiles Gaming</a></li>
-                            <li><a href="./shop.html">Ratones</a></li>
-                            <li><a href="./shop.html">Teclados</a></li>
-                            <li><a href="./shop.html">Monitores</a></li>
-                            <li><a href="./shop.html">Audio</a></li>
-                            <li><a href="./shop.html">Consolas</a></li>
-                            <li><a href="./shop.html">Juegos</a></li>
+                           <li class="active"><a href="/buscarCategoriaSobremesa">PC Sobremesa Gaming</a></li>
+                            <li><a href="/buscarCategoriaPortatiles">Portatiles Gaming</a></li>
+                            <li><a href="/buscarCategoriaRatones">Ratones</a></li>
+                            <li><a href="/buscarCategoriaTeclados">Teclados</a></li>
+                            <li><a href="/buscarCategoriaMonitores">Monitores</a></li>
+                            <li><a href="/buscarCategoriaAudio">Audio</a></li>
+                            <li><a href="/buscarCategoriaConsolas">Consolas</a></li>
+                            <li><a href="/buscarCategoriaJuegos">Juegos</a></li>
                         </ul>
                     </div>
                 </div>
@@ -131,25 +126,25 @@
                         <li class="active"><a href="./index.html">Ofertas</a></li>
                         <li><a href="#">Perféricos</a>
                         <ul class="dropdown">
-                                <li><a href="./shop.html">Ratones</a></li>
-                                <li><a href="./shop.html">Teclados</a></li>
-                                <li><a href="./shop.html">Monitores</a></li>
+                                <li><a href="/buscarCategoriaRatones">Ratones</a></li>
+                                <li><a href="/buscarCategoriaTeclados">Teclados</a></li>
+                                <li><a href="/buscarCategoriaMonitores">Monitores</a></li>
                             </ul></li>
                         <li><a href="#">Hardware</a>
                             <ul class="dropdown">
-                                <li><a href="./shop.html">Sobremesa</a></li>
-                                <li><a href="./shop.html">Portatiles</a></li>
-                                <li><a href="./shop.html">Consolas</a></li>
+                                <li><a href="/buscarCategoriaSobremesa">Sobremesa</a></li>
+                                <li><a href="/buscarCategoriaPortatiles">Portatiles</a></li>
+                                <li><a href="/buscarCategoriaConsolas">Consolas</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Juegos</a>
                             <ul class="dropdown">
-                                <li><a href="./shop.html">Juegos PS4</a></li>
-                                <li><a href="./shop.html">Juegos Xbox</a></li>
-                                <li><a href="./shop.html">Juegos Nintendo</a></li>
+                                <li><a href="/buscarCategoriaJuegosPs4">Juegos PS4</a></li>
+                                <li><a href="/buscarCategoriaJuegosXbox">Juegos Xbox</a></li>
+                                <li><a href="/buscarCategoriaJuegosNintendo">Juegos Nintendo</a></li>
                             </ul>
                         </li>
-                        <li><a href="./contact.html">Contacto</a></li>
+                        <li><a href="/accederContacto">Contacto</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -157,22 +152,6 @@
         </div>
     </header>
     <!-- Header End -->
-
-    <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text product-more">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./shop.html">Shop</a>
-                        <span>Check Out</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Section Begin -->
 
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">
@@ -234,20 +213,17 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="checkout-content">
-                            <input type="text" placeholder="Enter Your Coupon Code">
-                        </div>
                         <div class="place-order">
                             <h4>Your Order</h4>
                             <div class="order-total">
-                                <ul class="order-table">
-                                    <li>Product <span>Total</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$60.00</span></li>
-                                    <li class="fw-normal">Combination x 1 <span>$120.00</span></li>
-                                    <li class="fw-normal">Subtotal <span>$240.00</span></li>
-                                    <li class="total-price">Total <span>$240.00</span></li>
-                                </ul>
+<!--                                 <ul class="order-table"> -->
+<!--                                     <li>Product <span>Total</span></li> -->
+<!--                                     <li class="fw-normal">Combination x 1 <span>$60.00</span></li> -->
+<!--                                     <li class="fw-normal">Combination x 1 <span>$60.00</span></li> -->
+<!--                                     <li class="fw-normal">Combination x 1 <span>$120.00</span></li> -->
+<!--                                     <li class="fw-normal">Subtotal <span>$240.00</span></li> -->
+<!--                                     <li class="total-price">Total <span>$240.00</span></li> -->
+<!--                                 </ul> -->
                                 <div class="payment-check">
                                     <div class="pc-item">
                                         <label for="pc-check">

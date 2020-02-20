@@ -177,52 +177,53 @@
             
                         <h2>Modificar Producto</h2>
                         
-                                    <form class="form-inline" method="post" action="/modificarProducto">            	
+                                                	
                                     <div class="col-lg-6">
-                                    <p>
-                                    <select class="form-control" name="idProducto" required>
-                                    {{#productos}}
-                                        <option value="{{idProducto}}">{{nombre}}</option>
-                                    {{/productos}}
-                                    {{^productos}}
-                                    <option disabled>
-                                    No hay items
-                                    </option>
-                                    {{/productos}}
-                                    </select>
-                                    </p>
-                                    </div>
-                                    <div class="col-lg-8">
                         
-
-							                                     
-                            <button type="submit" class="site-btn register-btn" >Modificar</button>
+							{{#producto}}
+							 <form class="form-inline" method="post" action="/modificacionProducto">
+                            <div class="group-input">
+                            	<input type="text" name="idProducto" value="{{idProducto}}" style="display: none;" class="form-control" required>
+                                <label for="Nombre de Producto">Nombre</label>
+                                <input type="text" name="nombre" value="{{nombre}}" class="form-control" required>
                             </div>
-                            <h2 style="visibility: hidden"> Modificar Producto</h2>
-
-                                    <form class="form-inline" method="post" action="/eliminarProducto">            	
-                                    <div class="col-lg-6">
-                                    <p>
-                                    <select class="form-control" name="idProducto" required>
-                                    {{#productos}}
-                                        <option value="{{idProducto}}">{{nombre}}</option>
-                                    {{/productos}}
-                                    {{^productos}}
-                                    <option disabled>
-                                    No hay items
-                                    </option>
-                                    {{/productos}}
-                                    </select>
-                                    </p>
-                                    </div>
-                                    <div class="col-lg-8">                        
                             
-                            <button type="submit" class="site-btn register-btn">Borrar</button>
-                        	
-                        	</form>
+                            <div class="group-input">
+                                <label for="Categoria">Categoria</label>
+                                <select name="categoria" value="{{categoria}}" class="form-control" required>
+									<option>{{categoria}}</option>
+									<option>Portatil</option>
+									<option>Sobremesa</option>
+									<option>Monitor</option>
+									<option>Consola</option>
+                                                                <option>Raton</option>
+                                                                <option>Teclado</option>
+                                                                <option>Juegos</option>
+								</select>
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="Descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" value="{{descripcion}}" class="form-control" required>
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="Precio">Precio</label>
+                                <input type="text" name="precio" value="{{precio}}" min="1" max="5000" class="form-control" required>
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="urlImagen">urlImagen</label>
+                                <input type="text" name="urlImagen" value="{{urlImagen}}" class="form-control" required>
+                            </div>
+                            
+
+                            <button type="submit" class="site-btn register-btn">Modificar</button>
+                        </form>
 
 
                     </div>
+                    {{/producto}}
                 </div>
             </div>
         </div>

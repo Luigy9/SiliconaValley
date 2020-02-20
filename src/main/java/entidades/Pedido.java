@@ -76,7 +76,7 @@ public class Pedido {
 		
 		this.usuario = usuario;
 	}
-    
+	
 	public void setListaProductos(List<Producto> productos) {
 		this.productos=productos;
 	}

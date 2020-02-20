@@ -87,17 +87,11 @@
                     </div>
                     <div class="col-lg-3 text-right col-md-3">
                         <ul class="nav-right">
-                            <li class="heart-icon"><a href="#">
-                                    <i class="icon_heart_alt"></i>
-                                    <span>1</span>
-                                </a>
-                            </li>
-                            <li class="cart-icon"><a href="#">
+                            <li class="cart-icon"><a href="/carritoDetalles">
                                     <i class="icon_bag_alt"></i>
                                     <span>3</span>
                                 </a>
                                 <div class="cart-hover">
-
                                     <div class="select-button">
                                        <a href="/carritoDetalles" class="primary-btn view-card">SHOPPING CART</a>
                                         <a href="/carritoPagar" class="primary-btn checkout-btn">CHECK OUT</a>
@@ -116,14 +110,14 @@
                         <i class="ti-menu"></i>
                         <span>Categorías</span>
                         <ul class="depart-hover">
-                            <li class="active"><a href="./shop.html">PC Sobremesa Gaming</a></li>
-                            <li><a href="./shop.html">Portatiles Gaming</a></li>
-                            <li><a href="./shop.html">Ratones</a></li>
-                            <li><a href="./shop.html">Teclados</a></li>
-                            <li><a href="./shop.html">Monitores</a></li>
-                            <li><a href="./shop.html">Audio</a></li>
-                            <li><a href="./shop.html">Consolas</a></li>
-                            <li><a href="./shop.html">Juegos</a></li>
+                           <li class="active"><a href="/buscarCategoriaSobremesa">PC Sobremesa Gaming</a></li>
+                            <li><a href="/buscarCategoriaPortatiles">Portatiles Gaming</a></li>
+                            <li><a href="/buscarCategoriaRatones">Ratones</a></li>
+                            <li><a href="/buscarCategoriaTeclados">Teclados</a></li>
+                            <li><a href="/buscarCategoriaMonitores">Monitores</a></li>
+                            <li><a href="/buscarCategoriaAudio">Audio</a></li>
+                            <li><a href="/buscarCategoriaConsolas">Consolas</a></li>
+                            <li><a href="/buscarCategoriaJuegos">Juegos</a></li>
                         </ul>
                     </div>
                 </div>
@@ -132,25 +126,25 @@
                         <li class="active"><a href="./index.html">Ofertas</a></li>
                         <li><a href="#">Perféricos</a>
                         <ul class="dropdown">
-                                <li><a href="./shop.html">Ratones</a></li>
-                                <li><a href="./shop.html">Teclados</a></li>
-                                <li><a href="./shop.html">Monitores</a></li>
+                                <li><a href="/buscarCategoriaRatones">Ratones</a></li>
+                                <li><a href="/buscarCategoriaTeclados">Teclados</a></li>
+                                <li><a href="/buscarCategoriaMonitores">Monitores</a></li>
                             </ul></li>
                         <li><a href="#">Hardware</a>
                             <ul class="dropdown">
-                                <li><a href="./shop.html">Sobremesa</a></li>
-                                <li><a href="./shop.html">Portatiles</a></li>
-                                <li><a href="./shop.html">Consolas</a></li>
+                                <li><a href="/buscarCategoriaSobremesa">Sobremesa</a></li>
+                                <li><a href="/buscarCategoriaPortatiles">Portatiles</a></li>
+                                <li><a href="/buscarCategoriaConsolas">Consolas</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Juegos</a>
                             <ul class="dropdown">
-                                <li><a href="./shop.html">Juegos PS4</a></li>
-                                <li><a href="./shop.html">Juegos Xbox</a></li>
-                                <li><a href="./shop.html">Juegos Nintendo</a></li>
+                                <li><a href="/buscarCategoriaJuegosPs4">Juegos PS4</a></li>
+                                <li><a href="/buscarCategoriaJuegosXbox">Juegos Xbox</a></li>
+                                <li><a href="/buscarCategoriaJuegosNintendo">Juegos Nintendo</a></li>
                             </ul>
                         </li>
-                        <li><a href="./contact.html">Contacto</a></li>
+                        <li><a href="/accederContacto">Contacto</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -158,22 +152,6 @@
         </div>
     </header>
     <!-- Header End -->
-
-    <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text product-more">
-                        <a href="./home.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./shop.html">Shop</a>
-                        <span>Detail</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Section Begin -->
 
     <!-- Product Shop Section Begin -->
     <section class="product-shop spad page-details">
@@ -217,7 +195,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="product-pic-zoom">
-                                <img class="product-big-img" src="img/product-single/product-1.jpg" alt="">
+	                        	<script type="img" src={{urlImagen}}></script>   	
+                                <img class="product-big-img" src={{urlImagen}} alt="">
                                 <div class="zoom-icon">
                                     <i class="fa fa-search-plus"></i>
                                 </div>
@@ -242,14 +221,15 @@
                                 </div>
                                
                                 <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
-                                    </div>
-                                    <a href="#" class="primary-btn pd-cart">Add To Cart</a>
+                                    <form action="/añadirProductoCarrito" class="comment-form">
+                                    <input type="text" name="idProducto" value="{{idProducto}}" style="display: none;" class="form-control" required></input>
+                                    <button type="submit" class="primary-btn pd-cart">Add To Cart</button>
+                                    </form>
                                 </div>
                                 <ul class="pd-tags">
                                     <li><span>CATEGORIES</span><p>{{categoria}}</p></li>
                                 </ul>
+                                {{/producto}} 
                             </div>
                         </div>
                     </div>
@@ -262,78 +242,61 @@
                             </ul>
                         </div>
                         <div class="customer-review-option">
-                                        <h4>2 Comments</h4>
-                                        <div class="comment-option">
-                                            <div class="co-item">
-                                                <div class="avatar-pic">
-                                                    <img src="img/product-single/avatar-1.png" alt="">
-                                                </div>
-                                                <div class="avatar-text">
-                                                    <div class="at-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                    </div>
-                                                    <h5>Brandon Kelley <span>27 Aug 2019</span></h5>
-                                                    <div class="at-reply">Nice !</div>
-                                                </div>
-                                            </div>
-                                            <div class="co-item">
-                                                <div class="avatar-pic">
-                                                    <img src="img/product-single/avatar-2.png" alt="">
-                                                </div>
-                                                <div class="avatar-text">
-                                                    <div class="at-rating">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                    </div>
-                                                    <h5>Roy Banks <span>27 Aug 2019</span></h5>
-                                                    <div class="at-reply">Nice !</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="personal-rating">
-                                            <h6>Your Ratind</h6>
-                                            <div class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </div>
-                                        </div>
+                                        <div class=" col-lg-6 "ALIGN=CENTER>
+					
+                        {{#cyv}}
+                        			
+                                <div class="pi-pic">
+                                       <h5>
+                                            <p>
+                                                 Nombre: <small>{{usuario.nombreCompleto}}</small>
+                                            </p>
+                                                <p>
+                                                    Valoracion: <small>{{contenido}}</small>
+                                                </p>
+                                               	<p>
+													Fecha: <small>{{fecha}}</small>
+												</p>
+                                        </h5>
+                                        <br />
+                                </div>
+                        {{/cyv}}
+                        {{^cyv}}
+                                <div class="col-lg-6">
+                                        <h5>No hay Valoraciones</h5>
+                                        <br />
+                                </div>
+                        {{/cyv}}
+                </div>
                                         <div class="leave-comment">
                                             <h4>Leave A Comment</h4>
                                             <form action="/enviarValoracion" class="comment-form" method="post">
-                                           
-                                            <div name="{{producto.nombre}}" style="display: none;"> </div>
-                                            
+                                            {{#producto}} 
+                                            <input type="text" name="idProducto" value="{{idProducto}}" style="display: none;" class="form-control" required></input>{{/producto}}      
                                                 <div class="row">
                                                     <div class="col-lg-6">
-                                                        <input type="text" placeholder="Nombre" name="usuario">
-                                                        {{#valoracion}}
-                                        				<option value="{{id}}">{{nombreUsuario}}</option>
-                                    					{{/valoracion}}
-                                                    </div>
+                                                    
+                                                        <select class="form-control" name="id">
+															{{#usuarios}}
+	                                       					<option value="{{id}}">{{nombreUsuario}}</option>
+	                                    					{{/usuarios}}
+                                                    	</select>
+                                                    <div type="text" style="display: none;"></div>
                                                     <div class="col-lg-6">
                                                         <input type="date" placeholder="fecha" name="fecha" required>
                                                     </div>
                                                     <div class="col-lg-12">
-                                                        <textarea placeholder="Messages" name=contenido required></textarea>
+                                                        <textarea placeholder="valora el producto" name=contenido required></textarea>
                                                         <button type="submit" class="site-btn">Enviar valoracion</button>
                                                     </div>
+                                                </div>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                     </div>
                 </div>
-                {{/producto}}
+                
 
             </div>
         </div>

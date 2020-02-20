@@ -174,55 +174,51 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="register-form">
-            
-                        <h2>Modificar Producto</h2>
-                        
-                                    <form class="form-inline" method="post" action="/modificarProducto">            	
-                                    <div class="col-lg-6">
-                                    <p>
-                                    <select class="form-control" name="idProducto" required>
-                                    {{#productos}}
-                                        <option value="{{idProducto}}">{{nombre}}</option>
-                                    {{/productos}}
-                                    {{^productos}}
-                                    <option disabled>
-                                    No hay items
-                                    </option>
-                                    {{/productos}}
-                                    </select>
-                                    </p>
-                                    </div>
-                                    <div class="col-lg-8">
-                        
+                        <h2>Modificar Usuario</h2>
+                        <form class="form-inline" method="post" action="/modificacionUsuario">
 
-							                                     
-                            <button type="submit" class="site-btn register-btn" >Modificar</button>
+					{{#usuarios}}
+					<input type="text" name="id" value="{{id}}" style="display: none;" class="form-control" required>
+                            <div class="group-input">
+                                <label for="nombreusuario">Nombre</label>
+                                <input type="text" name="nombreusuario" value="{{nombreUsuario}}" class="form-control"required />
                             </div>
-                            <h2 style="visibility: hidden"> Modificar Producto</h2>
-
-                                    <form class="form-inline" method="post" action="/eliminarProducto">            	
-                                    <div class="col-lg-6">
-                                    <p>
-                                    <select class="form-control" name="idProducto" required>
-                                    {{#productos}}
-                                        <option value="{{idProducto}}">{{nombre}}</option>
-                                    {{/productos}}
-                                    {{^productos}}
-                                    <option disabled>
-                                    No hay items
-                                    </option>
-                                    {{/productos}}
-                                    </select>
-                                    </p>
-                                    </div>
-                                    <div class="col-lg-8">                        
+                    
+                            <div class="group-input">
+                                <label for="direccion">direccion</label>
+                                <input type="text" name=direccion value="{{direccion}}" required>
+                            </div>
+                            <div class="group-input">
+                                <label for="direccion">direccion</label>
+                                <input type="text" name=nombreCompleto value="{{nombreCompleto}}" required>
+                            </div>
+                            <div class="group-input">
+                                <label for="direccion">direccion</label>
+                                <input type="email" name=email value="{{email}}" required>
+                            </div>
                             
-                            <button type="submit" class="site-btn register-btn">Borrar</button>
-                        	
-                        	</form>
+                            <div class="group-input">
+                                <label for="telefono">Telefono</label>
+                                <input type="number" name="telefono" value="{{telefono}}" required>
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="codigoPostal">codigo Postal</label>
+                                <input type="number" name=codigoPostal value="{{codigoPostal}}" required>
+                            </div>
+                            
+                            <div class="group-input">
+                                <label for="password">password</label>
+                                <input type="password" name=password value="{{password}}" required>
+                            </div>
+                            
+					
+                            <button type="submit" class="site-btn register-btn">Modificar</button>
+							</form>
 
 
                     </div>
+                    {{/usuarios}} 
                 </div>
             </div>
         </div>

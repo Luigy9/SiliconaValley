@@ -36,18 +36,28 @@ public class ControladorUsuario {
 
 	
 	@PostMapping("/agregarUsuario")
-	public String agregarUsuario (@RequestParam String nombreUsuario,@RequestParam String password,Model model) {
+	public String agregarUsuario (@RequestParam String nombreusuario,@RequestParam String password,Model model, @RequestParam String direccion, 
+			@RequestParam int telefono, @RequestParam int codigoPostal, @RequestParam String email,@RequestParam String nombreCompleto) {
 		
-		Usuario u = new Usuario (nombreUsuario,password);
+		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password);
 		repositoriousuario.save(u);
 		
 		return "index";
 	}
 	
 	@RequestMapping("/modificarUsuario")
-	public String modificarUsuario (Model model, @RequestParam Usuario usuario,@RequestParam String nombreusuario, @RequestParam String direccion, 
+	public String modificarProducto (Model model,@RequestParam long id) {
+		
+		model.addAttribute("usuarios", repositoriousuario.findById(id));
+		
+		return "ModificarUsuario";
+	}
+	
+	@RequestMapping("/modificacionUsuario")
+	public String modificarUsuario (Model model, @RequestParam long id,@RequestParam String nombreusuario,@RequestParam String nombreCompleto,@RequestParam String email, @RequestParam String direccion, 
 			@RequestParam int telefono, @RequestParam int codigoPostal, @RequestParam String password) {
 		
+		Usuario usuario = repositoriousuario.findById(id);
 		//Si introduces un 0 en el campo correspondiente se indica que ese atributo no se quiere modificar
 		
 		if(!"0".equalsIgnoreCase(nombreusuario)) {
@@ -69,20 +79,22 @@ public class ControladorUsuario {
 		if(!"0".equalsIgnoreCase(password)) {
 			usuario.setPassword(password);
 		}
+		usuario.setEmail(email);
+		usuario.setNombreCompleto(nombreCompleto);
 		
 		repositoriousuario.save(usuario);
 		
 		
 		
-		return "adminUsuario";
+		return "index";
 	}
 	
-	@RequestMapping("/borrarUsuario")
-	public String borrarUsuario (Model model, @RequestParam Usuario usuario) {
+	@RequestMapping("/eliminarUsuario")
+	public String eliminarUsuario (Model model, @RequestParam long id) {
 		
-		repositoriousuario.delete(usuario);
+		repositoriousuario.deleteById(id);
 		
-		return "adminUsuario";
+		return "index";
 	}
 	
 	@RequestMapping("/adminUsuario")

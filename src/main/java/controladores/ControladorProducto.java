@@ -13,11 +13,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import entidades.Producto;
 import entidades.Usuario;
 import repositorios.RepositorioProducto;
+import repositorios.RepositorioUsuario;
 @Controller
 public class ControladorProducto {
 	
 	@Autowired
 	private RepositorioProducto repositorioproducto;
+	@Autowired
+	private RepositorioUsuario repositoriousuario;
 		
 	
 	@RequestMapping("/accederProducto")
@@ -104,8 +107,11 @@ public class ControladorProducto {
 
 	@RequestMapping("/detallesProducto")
 	public String detallesProducto(Model model, @RequestParam long id) {
-		
-		model.addAttribute("producto", repositorioproducto.findByIdProducto(id));
+		Producto producto = repositorioproducto.findByIdProducto(id);
+		model.addAttribute("producto", producto);
+        model.addAttribute("usuarios", repositoriousuario.findAll());
+        model.addAttribute("cyv", producto.getCyV());
+        
 		
 		
 		return "product";
@@ -125,21 +131,27 @@ public class ControladorProducto {
 	
 	
 	@RequestMapping("/modificarProducto")
-	public String modificarProducto (Model model,@RequestParam Producto producto ,@RequestParam String nombre, @RequestParam String categoria,
-			@RequestParam String Descripcion, @RequestParam int precio, @RequestParam String urlImagen) {
+	public String modificarProducto (Model model,@RequestParam long idProducto) {
 		
-		//Si introduces un 0 en el campo correspondiente se indica que ese atributo no se quiere modificar
-		if(!"0".equalsIgnoreCase(categoria)) {
-			producto.setCategoria(categoria);
-		}
+		model.addAttribute("producto", repositorioproducto.findByIdProducto(idProducto));
 		
-		if(precio!=0) {
-			producto.setPrecio(precio);
-		}
+		return "ModificarProducto";
+	}
+	
+	@RequestMapping("/modificacionProducto")//modprodpeticion
+	public String modificarProductoPeticion (Model model, @RequestParam long idProducto,@RequestParam String nombre, @RequestParam String categoria,
+			@RequestParam String descripcion, @RequestParam int precio, @RequestParam String urlImagen) {
 		
+		Producto producto = repositorioproducto.findByIdProducto(idProducto);
+		producto.setNombre(nombre);
+		producto.setCategoria(categoria);
+		producto.setDescripcion(descripcion);
+		producto.setPrecio(precio);
+		producto.setUrlImagen(urlImagen);
+
 		repositorioproducto.save(producto);
 		
-		return "product";
+		return "index";
 	}
 	
 	@RequestMapping("/adminProducto")
@@ -149,10 +161,11 @@ public class ControladorProducto {
 	}
 	
 	@RequestMapping("/eliminarProducto")
-	public String eliminarProducto (Model model, @RequestParam Producto producto) {
+	public String eliminarProducto (Model model, @RequestParam long idProducto) {
+		Producto producto = repositorioproducto.findByIdProducto(idProducto);
 		repositorioproducto.delete(producto);
 		
-		return "adminProducto";
+		return "index";
 	}
 	
 	/*@RequestMapping("/buscarPrecio")
