@@ -111,7 +111,7 @@ La aplicación integrará los servicios internos:
   
   Aqui podemos ver la pagina del carrito de la aplicación
   
-  ![Captura]()
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/carrito.png)
   
   
  ## **Diagrama de navegación:**
