@@ -117,15 +117,20 @@ public class ControladorProducto {
 		return "product";
 	}
 	
+	@RequestMapping("/agregarProducto")
+	public String  agregarProducto() {
+		
+		return "agregarProducto";
+	}
 	
-	@RequestMapping("/controlWeb")
-	public String agregarProducto (Model model,@RequestParam String nombre, @RequestParam String categoria, 
+	@RequestMapping("/agregacionProducto")
+	public String agregacionProducto (Model model,@RequestParam String nombre, @RequestParam String categoria, 
 			@RequestParam String descripcion, @RequestParam String urlImagen,@RequestParam int precio) {
 	
 		Producto producto = new Producto (nombre,categoria,descripcion,urlImagen,precio);
 		repositorioproducto.save(producto);
 	
-		return "controlWeb";
+		return "/";
 	}
 
 	
