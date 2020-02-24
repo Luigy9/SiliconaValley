@@ -141,6 +141,6 @@ En el diagrama de navegación podemos ver la parte amarilla, correspondiente a l
   
  -Un Usuario puede realizar varias valoraciones y varias valoraciones solo pueden tener un usuario. Relación 1:N
    
- -Un Producto puede estar en varios pedidos y varios pedidos solo pueden tener un producto. Relación 1:N
+ -Un Producto puede estar en varios pedidos y varios pedidos pueden tener varios productos. Relación N:M
  
  -Un Producto puede realizar varias valoraciones y varias valoraciones solo pueden tener un producto. Relación 1:N
