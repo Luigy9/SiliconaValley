@@ -126,3 +126,21 @@ En el diagrama de navegación podemos ver la parte amarilla, correspondiente a l
  En cuanto al modelo de datos, es el siguiente:
   
  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/uml.png)
+ 
+ 
+ En cuanto al modelo entidad-relación, es el siguiente:
+ 
+ ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/er.png)
+ 
+ 
+ Donde podemos ver:
+ 
+ -Un Usuario puede realizar varios pedidos y varios pedidos solo pueden tener un usuario. Relación 1:N
+ 
+ -Un Usuario puede realizar varios mensajes y varios mensajes solo pueden tener un usuario. Relación 1:N
+  
+ -Un Usuario puede realizar varias valoraciones y varias valoraciones solo pueden tener un usuario. Relación 1:N
+   
+ -Un Producto puede estar en varios pedidos y varios pedidos pueden tener varios productos. Relación N:M
+ 
+ -Un Producto puede realizar varias valoraciones y varias valoraciones solo pueden tener un producto. Relación 1:N
