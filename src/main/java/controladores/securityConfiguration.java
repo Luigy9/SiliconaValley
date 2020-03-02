@@ -12,8 +12,9 @@ public class securityConfiguration extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/index").permitAll();
 		http.authorizeRequests().antMatchers("/login").permitAll();
 		
+		
 	}
-	
+	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.inMemoryAuthentication().withUser("user").password("pass").roles("USER");
 	}
