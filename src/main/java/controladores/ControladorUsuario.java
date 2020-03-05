@@ -1,13 +1,16 @@
 package controladores;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,11 +32,15 @@ public class ControladorUsuario {
 	}
 	@RequestMapping("/controladorLogin")
 	public String controladorLogin () {
-		
+//		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+//		 model.addAttribute("token", token.getToken());
 		return "login";
 	}	
 	
-
+    @RequestMapping("/login")
+    public String login() {
+    	return "index";
+    }
 	
 	@PostMapping("/agregarUsuario")
 	public String agregarUsuario (@RequestParam String nombreusuario,@RequestParam String password,Model model, @RequestParam String direccion, 

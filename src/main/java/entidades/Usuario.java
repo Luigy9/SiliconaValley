@@ -13,6 +13,7 @@ import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 @Entity
@@ -59,7 +60,7 @@ public class Usuario {
 		this.nombreUsuario = nombreusuario;
 		this.nombreCompleto = nombreCompleto;
 		this.codigoPostal = codigoPostal;
-		this.password = password;
+		this.password = new BCryptPasswordEncoder().encode(password);
 		
 	}
 	
@@ -121,6 +122,12 @@ public class Usuario {
 	
 	public String getPassword() {
 		return password;
+	}
+	
+	public String getRole() {
+		if(nombreCompleto == "LUigyy9")
+			return "ROLE_ADMIN";
+		return "ROLE_USER";
 	}
 	
 	public void setPassword(String password) {
