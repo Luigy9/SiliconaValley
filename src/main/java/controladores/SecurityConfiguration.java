@@ -20,14 +20,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/index").permitAll();
 		http.authorizeRequests().antMatchers("/login").authenticated();
 		http.authorizeRequests().antMatchers("/carritoDetalles").hasAnyRole("USER","ADMIN");
+		
 		http.authorizeRequests().antMatchers("/modificarProducto").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers("/eliminarProducto").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers("/agregarProducto").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers("/modificarProducto").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers("/modificarUsuario").hasAnyRole("ADMIN");
+		http.authorizeRequests().antMatchers("/eliminarUsuario").hasAnyRole("ADMIN");
 		http.authorizeRequests().anyRequest().permitAll();
 		
         http.formLogin().loginPage("/controladorLogin");
         http.formLogin().usernameParameter("username");
         http.formLogin().passwordParameter("pass");
         http.formLogin().defaultSuccessUrl("/login");
-        http.formLogin().failureUrl("/controladorRegistro");
+        http.formLogin().failureUrl("/controladorRegistro");        
         
         http.logout().logoutUrl("/logout");
         http.logout().logoutSuccessUrl("/logout");
@@ -36,10 +42,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	}
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-//		auth.inMemoryAuthentication().withUser("user").password("pass").roles("USER");
-//		
-//		auth.inMemoryAuthentication().withUser("admin").password("adminpass").roles("USER", "ADMIN");
-		
+		//auth.inMemoryAuthentication().withUser("user").password("pass").roles("USER");
+		auth.inMemoryAuthentication().withUser("luigy9").password("holamundo").roles("USER", "ADMIN");		
 		auth.authenticationProvider(authenticationProvider);
 	}
 }
