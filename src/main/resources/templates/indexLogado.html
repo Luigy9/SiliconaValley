@@ -13,15 +13,15 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/themify-icons.css" rel="stylesheet" type="text/css">
+    <link href="css/elegant-icons.css" rel="stylesheet" type="text/css">
+    <link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+    <link href="css/nice-select.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/slicknav.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet"  type="text/css">
 </head>
 
 <body>
@@ -45,10 +45,7 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="/controladorLogin" class="login-panel"><i class="fa fa-user"></i>Login</a>
-                    <a href="/controladorRegistro" class="login-panel"><i class="fa fa-user"></i>Registro</a>
-                    <a href="/adminUsuario" class="login-panel"><i class="fa fa-user"></i>AdminU</a>
-                    <a href="/adminProducto" class="login-panel"><i class="fa fa-user"></i>AdminP</a>
+                    <a href="/controladorLogin" class="login-panel"><i class="fa fa-user"></i>Usuario Registrado</a>
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
@@ -110,14 +107,14 @@
                         <i class="ti-menu"></i>
                         <span>Categorías</span>
                         <ul class="depart-hover">
-                           <li class="active"><a href="/buscarCategoriaSobremesaLogado">PC Sobremesa Gaming</a></li>
+                            <li class="active"><a href="/buscarCategoriaSobremesaLogado">PC Sobremesa Gaming</a></li>
                             <li><a href="/buscarCategoriaPortatilesLogado">Portatiles Gaming</a></li>
                             <li><a href="/buscarCategoriaRatonesLogado">Ratones</a></li>
                             <li><a href="/buscarCategoriaTecladosLogado">Teclados</a></li>
                             <li><a href="/buscarCategoriaMonitoresLogado">Monitores</a></li>
                             <li><a href="/buscarCategoriaAudioLogado">Audio</a></li>
                             <li><a href="/buscarCategoriaConsolasLogado">Consolas</a></li>
-                            <li><a href="./buscarCategoriaJuegosLogado">Juegos</a></li>
+                            <li><a href="/buscarCategoriaJuegosLogado">Juegos</a></li>
                         </ul>
                     </div>
                 </div>
@@ -153,51 +150,152 @@
     </header>
     <!-- Header End -->
 
-    <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Login</span>
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="hero-items owl-carousel">
+            <div class="single-hero-items set-bg" data-setbg="img/hero-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <span>Juega donde estés</span>
+                            <h1>Portátiles Rebajados</h1>
+                            <p><span>Aprovecha nuestros descuentos de final de temporada, los portátiles más top a los mejores precios</span></p>
+                            <a href="#" class="primary-btn">Comprar Ahora</a>
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Rebajas <span>20%</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="single-hero-items set-bg" data-setbg="img/hero-2.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <span>Monitores para todas las ocasiones</span>
+                            <h1>Pantallas FHD</h1>
+                            <p><span>Liquidamos todo el Stock, ven a aprovecharte de esta gran oportunidad</span></p>
+                            <a href="#" class="primary-btn">Comprar Ahora</a>
+                        </div>
+                    </div>
+                    <div class="off-card">
+                        <h2>Rebajas <span>25%</span></h2>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Breadcrumb Form Section Begin -->
+    </section>
+    <!-- Hero Section End -->
 
-    <!-- Register Section Begin -->
-    <div class="register-login-section spad">
-        <div class="container">
+    <!-- Banner Section Begin -->
+    <div class="banner-section spad">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="login-form">
-                        <h2>Login</h2>
-                        <form action="/controladorLogin" method="post">
-                            <div class="group-input">
-                                <label for="username" >Username*</label>
-                                <input type="text" name="username"">
-                            </div>
-                            <div class="group-input">
-                                <label for="pass">Password *</label>
-                                <input type="text" name="pass">
-                            </div>
-                            <div class="group-input gi-check">
-                            </div>
-                            <button type="submit" class="site-btn login-btn" >Sign In</button>
-                          
-                        </form>
-                        <div class="switch-login">
-                            <a href="/controladorRegistro" class="or-login">Or Create An Account</a>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-1.jpg" alt="">
+                        <div class="inner-text">
+                            <h4><a href="/buscarCategoriaSobremesa">Sobremesa</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-2.jpg" alt="">
+                        <div class="inner-text">
+                            <h4><a href="/buscarCategoriaPortatiles">Portatiles</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-3.jpg" alt="">
+                        <div class="inner-text">
+                            <h4><li><a href="/buscarCategoriaMonitores">Consolas</a></h4>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Register Form Section End -->
+    <!-- Banner Section End -->
+
+       <!-- Banner Section Begin -->
+    <div class="banner-section spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-4.jpg" alt="">
+                        <div class="inner-text">
+                            <h4><li><a href="/buscarCategoriaAudio">Audio</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-5.jpg" alt="">
+                        <div class="inner-text">
+                            <h4><li><a href="/buscarCategoriaConsolas">Consolas</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
+                        <img src="img/banner-6.jpg" alt="">
+                        <div class="inner-text">
+                            <h4><li><a href="/buscarCategoriaJuegos">Juegos</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- Latest Blog Section Begin -->
+
+
+            <div class="benefit-items">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="img/icon-1.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Envío Gratis</h6>
+                                <p>En compras superiores a 250€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="img/icon-2.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Envio en 1 día</h6>
+                                <p>Envío en un 1 día disponible en la península</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="img/icon-3.png" alt="">
+                            </div>
+                            <div class="sb-text">
+                                <h6>Pago Seguro</h6>
+                                <p>Paga con Pay-Pal o con tarjeta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest Blog Section End -->
 
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">

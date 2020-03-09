@@ -39,7 +39,7 @@ public class ControladorUsuario {
 	
     @RequestMapping("/login")
     public String login() {
-    	return "index";
+    	return "indexLogado";
     }
 	
 	@PostMapping("/agregarUsuario")
@@ -49,7 +49,7 @@ public class ControladorUsuario {
 		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password);
 		repositoriousuario.save(u);
 		
-		return "index";
+		return "indexLogado";
 	}
 	
 	@RequestMapping("/modificarUsuario")

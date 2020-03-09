@@ -216,6 +216,88 @@ public class ControladorProducto {
 //		return "";
 //	}
 	
+	@RequestMapping("/buscarCategoriaSobremesaLogado")
+	public String buscarCategoriaSobremesaLogado (Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Sobremesa");
+		model.addAttribute("productos", productos);
+		return "shop logado";
+	}
 	
+	@RequestMapping("/buscarCategoriaPortatilesLogado")
+	public String buscarCategoriaPortatilGamingLogado (Model model) {
+		
+		List<Producto> productos = repositorioproducto.findByCategoria("Portatil");
+		model.addAttribute("productos", productos);
+		
+		return "shop logado";
+	}
 	
+	@RequestMapping("/buscarCategoriaRatonesLogado")
+	public String buscarCategoriaRatonesLogado(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Raton");
+		model.addAttribute("productos", productos);
+		return "shop logado";
+	}
+	@RequestMapping("/buscarCategoriaTecladosLogado")
+	public String buscarCategoriaTecladosLogado(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Teclado");
+		model.addAttribute("productos", productos);
+		return "shop logado";
+	}
+	@RequestMapping("/buscarCategoriaMonitoresLogado")
+	public String buscarCategoriaMonitoresLogado(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Monitor");
+		model.addAttribute("productos", productos);
+		return "shop logado";
+	}
+	@RequestMapping("/buscarCategoriaAudioLogado")
+	public String buscarCategoriaAudioLogado(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Audio");
+		model.addAttribute("productos", productos);
+		return "shop logado";
+	}
+	@RequestMapping("/buscarCategoriaConsolasLogado")
+	public String buscarCategoriaConsolasLogado(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Consola");
+		model.addAttribute("productos", productos);
+		return "shop logado";
+	}
+	@RequestMapping("/buscarCategoriaJuegosLogado")
+	public String buscarCategoriaJuegosLogado(Model model) {
+		List<Producto> productos = repositorioproducto.findByCategoria("Juegos");
+		model.addAttribute("productos", productos);
+		return "shop logado";
+	}
+	
+	@RequestMapping("/buscarCategoriaJuegosPs4Logado")
+	public String buscarCategoriaJuegosPs4Logado(Model model) {
+		List<Producto> productos = repositorioproducto.findByDescripcion("Juego PS4");
+		model.addAttribute("productos", productos);
+		return "shop logado";
+	}
+	@RequestMapping("/buscarCategoriaJuegosXboxLogado")
+	public String buscarCategoriaJuegosXboxLogado(Model model) {
+		List<Producto> productos = repositorioproducto.findByDescripcion("Juego Xbox");
+		model.addAttribute("productos", productos);
+		
+		return "shop logado";
+	}
+	
+	@RequestMapping("/buscarCategoriaJuegosNintendoLogado")
+	public String buscarCategoriaJuegosNintendoLogado(Model model) {
+		List<Producto> productos = repositorioproducto.findByDescripcion("Juego Nintendo");
+		model.addAttribute("productos", productos);
+		return "shop logado";
+	}	
+	@RequestMapping("/detallesProductoLogado")
+	public String detallesProductoLogado(Model model, @RequestParam long id) {
+		Producto producto = repositorioproducto.findByIdProducto(id);
+		model.addAttribute("producto", producto);
+        model.addAttribute("usuarios", repositoriousuario.findAll());
+        model.addAttribute("cyv", producto.getCyV());
+        
+		
+		
+		return "product logado";
+	}
 }

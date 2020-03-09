@@ -45,10 +45,8 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="/controladorLogin" class="login-panel"><i class="fa fa-user"></i>Login</a>
-                    <a href="/controladorRegistro" class="login-panel"><i class="fa fa-user"></i>Registro</a>
-                    <a href="/adminUsuario" class="login-panel"><i class="fa fa-user"></i>AdminU</a>
-                    <a href="/adminProducto" class="login-panel"><i class="fa fa-user"></i>AdminP</a>
+                    <a href="/controladorLogin" class="login-panel"><i class="fa fa-user"></i>Usuario Registrado</a>
+
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
@@ -110,14 +108,14 @@
                         <i class="ti-menu"></i>
                         <span>Categorías</span>
                         <ul class="depart-hover">
-                           <li class="active"><a href="/buscarCategoriaSobremesaLogado">PC Sobremesa Gaming</a></li>
-                            <li><a href="/buscarCategoriaPortatilesLogado">Portatiles Gaming</a></li>
-                            <li><a href="/buscarCategoriaRatonesLogado">Ratones</a></li>
-                            <li><a href="/buscarCategoriaTecladosLogado">Teclados</a></li>
-                            <li><a href="/buscarCategoriaMonitoresLogado">Monitores</a></li>
-                            <li><a href="/buscarCategoriaAudioLogado">Audio</a></li>
-                            <li><a href="/buscarCategoriaConsolasLogado">Consolas</a></li>
-                            <li><a href="./buscarCategoriaJuegosLogado">Juegos</a></li>
+                           <li class="active"><a href="/buscarCategoriaSobremesa">PC Sobremesa Gaming</a></li>
+                            <li><a href="/buscarCategoriaPortatiles">Portatiles Gaming</a></li>
+                            <li><a href="/buscarCategoriaRatones">Ratones</a></li>
+                            <li><a href="/buscarCategoriaTeclados">Teclados</a></li>
+                            <li><a href="/buscarCategoriaMonitores">Monitores</a></li>
+                            <li><a href="/buscarCategoriaAudio">Audio</a></li>
+                            <li><a href="/buscarCategoriaConsolas">Consolas</a></li>
+                            <li><a href="/buscarCategoriaJuegos">Juegos</a></li>
                         </ul>
                     </div>
                 </div>
@@ -126,22 +124,22 @@
                         <li class="active"><a href="./index.html">Ofertas</a></li>
                         <li><a href="#">Perféricos</a>
                         <ul class="dropdown">
-                                <li><a href="/buscarCategoriaRatonesLogado">Ratones</a></li>
-                                <li><a href="/buscarCategoriaTecladosLogado">Teclados</a></li>
-                                <li><a href="/buscarCategoriaMonitoresLogado">Monitores</a></li>
+                                <li><a href="/buscarCategoriaRatones">Ratones</a></li>
+                                <li><a href="/buscarCategoriaTeclados">Teclados</a></li>
+                                <li><a href="/buscarCategoriaMonitores">Monitores</a></li>
                             </ul></li>
                         <li><a href="#">Hardware</a>
                             <ul class="dropdown">
-                                <li><a href="/buscarCategoriaSobremesaLogado">Sobremesa</a></li>
-                                <li><a href="/buscarCategoriaPortatilesLogado">Portatiles</a></li>
-                                <li><a href="/buscarCategoriaConsolasLogado">Consolas</a></li>
+                                <li><a href="/buscarCategoriaSobremesa">Sobremesa</a></li>
+                                <li><a href="/buscarCategoriaPortatiles">Portatiles</a></li>
+                                <li><a href="/buscarCategoriaConsolas">Consolas</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Juegos</a>
                             <ul class="dropdown">
-                                <li><a href="/buscarCategoriaJuegosPs4Logado">Juegos PS4</a></li>
-                                <li><a href="/buscarCategoriaJuegosXboxLogado">Juegos Xbox</a></li>
-                                <li><a href="/buscarCategoriaJuegosNintendoLogado">Juegos Nintendo</a></li>
+                                <li><a href="/buscarCategoriaJuegosPs4">Juegos PS4</a></li>
+                                <li><a href="/buscarCategoriaJuegosXbox">Juegos Xbox</a></li>
+                                <li><a href="/buscarCategoriaJuegosNintendo">Juegos Nintendo</a></li>
                             </ul>
                         </li>
                         <li><a href="/accederContacto">Contacto</a></li>
@@ -153,51 +151,155 @@
     </header>
     <!-- Header End -->
 
-    <!-- Breadcrumb Section Begin -->
-    <div class="breacrumb-section">
+    <!-- Product Shop Section Begin -->
+    <section class="product-shop spad page-details">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-text">
-                        <a href="#"><i class="fa fa-home"></i> Home</a>
-                        <span>Login</span>
+                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
+                    <div class="filter-widget">
+                        <h4 class="fw-title">Categorías</h4>
+                        <ul class="filter-catagories">
+                           <li class="active"><a href="/buscarCategoriaSobremesa">PC Sobremesa Gaming</a></li>
+                            <li><a href="/buscarCategoriaPortatiles">Portatiles Gaming</a></li>
+                            <li><a href="/buscarCategoriaRatones">Ratones</a></li>
+                            <li><a href="/buscarCategoriaTeclados">Teclados</a></li>
+                            <li><a href="/buscarCategoriaMonitores">Monitores</a></li>
+                            <li><a href="/buscarCategoriaAudio">Audio</a></li>
+                            <li><a href="/buscarCategoriaConsolas">Consolas</a></li>
+                            <li><a href="./buscarCategoriaJuegos">Juegos</a></li>
+                        </ul>
+                    </div>
+                    <div class="filter-widget">
+                        <h4 class="fw-title">Price</h4>
+                        <div class="filter-range-wrap">
+                            <div class="range-slider">
+                                <div class="price-input">
+                                    <input type="text" id="minamount">
+                                    <input type="text" id="maxamount">
+                                </div>
+                            </div>
+                            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                                data-min="0" data-max="5000">
+                                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                            </div>
+                        </div>
+                        <a href="#" class="filter-btn">Filter</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb Form Section Begin -->
-
-    <!-- Register Section Begin -->
-    <div class="register-login-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="login-form">
-                        <h2>Login</h2>
-                        <form action="/controladorLogin" method="post">
-                            <div class="group-input">
-                                <label for="username" >Username*</label>
-                                <input type="text" name="username"">
+                {{#producto}}
+                <div class="col-lg-9 order-lg-2">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="product-pic-zoom">
+	                        	<script type="img" src={{urlImagen}}></script>   	
+                                <img class="product-big-img" src={{urlImagen}} alt="">
+                                <div class="zoom-icon">
+                                    <i class="fa fa-search-plus"></i>
+                                </div>
                             </div>
-                            <div class="group-input">
-                                <label for="pass">Password *</label>
-                                <input type="text" name="pass">
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="product-details">
+                                <div class="pd-title">
+                                    <h3>{{nombre}}</h3>
+                                </div>
+                                <div class="pd-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <span>(5)</span>
+                                </div>
+                                <div class="pd-desc">
+                                    <p>{{descripcion}}</p>
+                                    <h4>{{precio}} €</h4>
+                                </div>
+                               
+                                <div class="quantity">
+                                    <form action="/añadirProductoCarrito" class="comment-form">
+                                    <input type="text" name="idProducto" value="{{idProducto}}" style="display: none;" class="form-control" required></input>
+                                    <button type="submit" class="primary-btn pd-cart">Add To Cart</button>
+                                    </form>
+                                </div>
+                                <ul class="pd-tags">
+                                    <li><span>CATEGORIA</span><p>{{categoria}}</p></li>
+                                </ul>
+                                {{/producto}} 
                             </div>
-                            <div class="group-input gi-check">
-                            </div>
-                            <button type="submit" class="site-btn login-btn" >Sign In</button>
-                          
-                        </form>
-                        <div class="switch-login">
-                            <a href="/controladorRegistro" class="or-login">Or Create An Account</a>
                         </div>
                     </div>
+                    <div class="product-tab">
+                        <div class="tab-item">
+                            <ul class="nav" role="tablist">
+                                <li>
+                                    <a class="active" data-toggle="tab" href="#tab-1" role="tab">Valoraciones</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="customer-review-option">
+                                        <div class=" col-lg-6 "ALIGN=CENTER>
+					
+                        {{#cyv}}
+                        			
+                                <div class="pi-pic">
+                                       <h5>
+                                            <p>
+                                                 Nombre: <small>{{usuario.nombreCompleto}}</small>
+                                            </p>
+                                                <p>
+                                                    Valoracion: <small>{{contenido}}</small>
+                                                </p>
+                                               	<p>
+													Fecha: <small>{{fecha}}</small>
+												</p>
+                                        </h5>
+                                        <br />
+                                </div>
+                        {{/cyv}}
+                        {{^cyv}}
+                                <div class="col-lg-6">
+                                        <h5>No hay Valoraciones</h5>
+                                        <br />
+                                </div>
+                        {{/cyv}}
                 </div>
+                                        <div class="leave-comment">
+                                            <h4>Leave A Comment</h4>
+                                            <form action="/enviarValoracion" class="comment-form" method="post">
+                                            {{#producto}} 
+                                            <input type="text" name="idProducto" value="{{idProducto}}" style="display: none;" class="form-control" required></input>{{/producto}}      
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                    
+                                                        <select class="form-control" name="id">
+															{{#usuarios}}
+	                                       					<option value="{{id}}">{{nombreUsuario}}</option>
+	                                    					{{/usuarios}}
+                                                    	</select>
+                                                    <div type="text" style="display: none;"></div>
+                                                    <div class="col-lg-6">
+                                                        <input type="date" placeholder="fecha" name="fecha" required>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <textarea placeholder="valora el producto" name=contenido required></textarea>
+                                                        <button type="submit" class="site-btn">Enviar valoracion</button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                    </div>
+                </div>
+                
+
             </div>
         </div>
-    </div>
-    <!-- Register Form Section End -->
+    </section>
+    <!-- Product Shop Section End -->
 
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">
