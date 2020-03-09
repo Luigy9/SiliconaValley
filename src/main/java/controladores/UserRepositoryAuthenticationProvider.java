@@ -38,11 +38,11 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
 		}
 
 		List<GrantedAuthority> roles = new ArrayList<>();
-
+			
 			roles.add(new SimpleGrantedAuthority(user.getRole()));
 
 		
-		return new UsernamePasswordAuthenticationToken(user.getNombreCompleto(), password, roles);
+		return new UsernamePasswordAuthenticationToken(user.getNombreUsuario(), password, roles);
 	}
 
 	@Override

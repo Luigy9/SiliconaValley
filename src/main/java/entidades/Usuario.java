@@ -125,9 +125,13 @@ public class Usuario {
 	}
 	
 	public String getRole() {
-		if(nombreCompleto == "LUigyy9")
-			return "ROLE_ADMIN";
+		if(nombreUsuario == "luigy9")
+			return "ADMIN";
 		return "ROLE_USER";
+	}
+	
+	public void setRol() {
+		
 	}
 	
 	public void setPassword(String password) {
