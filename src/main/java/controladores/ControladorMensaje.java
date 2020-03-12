@@ -2,7 +2,10 @@ package controladores;
 
 import java.sql.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,8 +35,9 @@ public class ControladorMensaje {
 	}
 	
 	@PostMapping("/enviarMensaje")
-	public String enviarMensaje(@RequestParam Usuario usuario,@RequestParam String email,@RequestParam String comentario,@RequestParam Date fechacomentario,Model model) {
-		
+	public String enviarMensaje(@RequestParam Usuario usuario,@RequestParam String email,@RequestParam String comentario,@RequestParam Date fechacomentario,Model model, HttpServletRequest request) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		Mensaje mensaje = new Mensaje (fechacomentario, email, comentario, usuario);
 		repositoriomensaje.save(mensaje);
 		

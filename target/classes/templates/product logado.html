@@ -46,6 +46,8 @@
                 </div>
                 <div class="ht-right">
                     <a href="/controladorLogin" class="login-panel"><i class="fa fa-user"></i>Usuario Registrado</a>
+                    <a href="/adminUsuario" class="login-panel"><i class="fa fa-user"></i>AdminU</a>
+                    <a href="/adminProducto" class="login-panel"><i class="fa fa-user"></i>AdminP</a>
 
                     <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
@@ -222,6 +224,7 @@
                                     <form action="/añadirProductoCarrito" class="comment-form">
                                     <input type="text" name="idProducto" value="{{idProducto}}" style="display: none;" class="form-control" required></input>
                                     <button type="submit" class="primary-btn pd-cart">Add To Cart</button>
+                                    <input type="hidden" name="_csrf" value="{{token}}"/>
                                     </form>
                                 </div>
                                 <ul class="pd-tags">
@@ -286,6 +289,7 @@
                                                     <div class="col-lg-12">
                                                         <textarea placeholder="valora el producto" name=contenido required></textarea>
                                                         <button type="submit" class="site-btn">Enviar valoracion</button>
+                                                        <input type="hidden" name="_csrf" value="{{token}}"/>
                                                     </div>
                                                 </div>
                                                 </div>

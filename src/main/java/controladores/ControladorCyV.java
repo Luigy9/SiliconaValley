@@ -2,7 +2,10 @@ package controladores;
 
 import java.sql.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,8 +30,10 @@ public class ControladorCyV {
 	private RepositorioProducto repositorioproducto;
 
 	@PostMapping("/enviarValoracion")
-	public String enviarValoracion(@RequestParam long idProducto,@RequestParam long id,@RequestParam String contenido,@RequestParam Date fecha,Model model) {
+	public String enviarValoracion(@RequestParam long idProducto,@RequestParam long id,@RequestParam String contenido,@RequestParam Date fecha,Model model, HttpServletRequest request) {
 		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		Usuario usuario = repositoriousuario.findById(id);
 		Producto producto = repositorioproducto.findByIdProducto(idProducto);
 		CyV mensaje = new CyV (producto, usuario, fecha, contenido);

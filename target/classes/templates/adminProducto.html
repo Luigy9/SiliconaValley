@@ -197,6 +197,8 @@
 
 							                                     
                             <button type="submit" class="site-btn register-btn" >Modificar</button>
+                            <input type="hidden" name="_csrf" value="{{token}}"/>
+                            
                             </div>
                             <h2 style="visibility: hidden"> Modificar Producto</h2>
 
@@ -218,11 +220,13 @@
                                     <div class="col-lg-8">                        
                             
                             <button type="submit" class="site-btn register-btn">Borrar</button>
+                            <input type="hidden" name="_csrf" value="{{token}}"/>
                         	
                         	</form>
                         	
                         	<form class="form-inline" action="/agregarProducto">
 							<button type="submit" class="site-btn register-btn" >Agregar</button>
+							<input type="hidden" name="_csrf" value="{{token}}"/>
 
                     </div>
                 </div>

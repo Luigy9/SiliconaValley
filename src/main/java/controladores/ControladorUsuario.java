@@ -26,44 +26,58 @@ public class ControladorUsuario {
 
 	
 	@RequestMapping("/controladorRegistro")
-	public String controladorRegistro () {
-		
+	public String controladorRegistro (Model model, HttpServletRequest request) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		return "register";
 	}
 	@RequestMapping("/controladorLogin")
-	public String controladorLogin () {
-//		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-//		 model.addAttribute("token", token.getToken());
+	public String controladorLogin (Model model, HttpServletRequest request) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		return "login";
 	}	
 	
     @RequestMapping("/login")
-    public String login() {
+    public String login(Model model, HttpServletRequest request) {
+    	
+    	Usuario usuario=repositoriousuario.findByNombreUsuario(request.getUserPrincipal().getName());
+    	CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
+    	if (usuario.getEsAdmin()) {
+    		model.addAttribute("usuarioAdmin",request.isUserInRole("ADMIN"));
+    	}else{
+    		model.addAttribute("usuario",request.isUserInRole("USER"));
+    	}
     	return "indexLogado";
     }
 	
 	@PostMapping("/agregarUsuario")
-	public String agregarUsuario (@RequestParam String nombreusuario,@RequestParam String password,Model model, @RequestParam String direccion, 
-			@RequestParam int telefono, @RequestParam int codigoPostal, @RequestParam String email,@RequestParam String nombreCompleto) {
-		
-		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password);
+	public String agregarUsuario (@RequestParam String nombreusuario,@RequestParam String password,Model model,HttpServletRequest request ,@RequestParam String direccion, 
+			@RequestParam int telefono, @RequestParam int codigoPostal, @RequestParam String email,@RequestParam String nombreCompleto,
+			@RequestParam boolean esAdmin) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
+		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password,esAdmin);
 		repositoriousuario.save(u);
 		
 		return "indexLogado";
 	}
 	
 	@RequestMapping("/modificarUsuario")
-	public String modificarProducto (Model model,@RequestParam long id) {
-		
+	public String modificarProducto (Model model,HttpServletRequest request,@RequestParam long id) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		model.addAttribute("usuarios", repositoriousuario.findById(id));
 		
 		return "ModificarUsuario";
 	}
 	
 	@RequestMapping("/modificacionUsuario")
-	public String modificarUsuario (Model model, @RequestParam long id,@RequestParam String nombreusuario,@RequestParam String nombreCompleto,@RequestParam String email, @RequestParam String direccion, 
+	public String modificarUsuario (Model model,HttpServletRequest request ,@RequestParam long id,@RequestParam String nombreusuario,@RequestParam String nombreCompleto,@RequestParam String email, @RequestParam String direccion, 
 			@RequestParam int telefono, @RequestParam int codigoPostal, @RequestParam String password) {
-		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		Usuario usuario = repositoriousuario.findById(id);
 		//Si introduces un 0 en el campo correspondiente se indica que ese atributo no se quiere modificar
 		
@@ -97,15 +111,18 @@ public class ControladorUsuario {
 	}
 	
 	@RequestMapping("/eliminarUsuario")
-	public String eliminarUsuario (Model model, @RequestParam long id) {
-		
+	public String eliminarUsuario (Model model,HttpServletRequest request ,@RequestParam long id) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		repositoriousuario.deleteById(id);
 		
 		return "index";
 	}
 	
 	@RequestMapping("/adminUsuario")
-	public String adminUsuario(Model model) {
+	public String adminUsuario(Model model, HttpServletRequest request) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		model.addAttribute("usuarios",repositoriousuario.findAll());
 		return "adminUsuario";
 	}

@@ -3,8 +3,10 @@ package controladores;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +26,10 @@ public class ControladorProducto {
 		
 	
 	@RequestMapping("/accederProducto")
-	public String accederProducto(Model model) {
-		
+	public String accederProducto(Model model, HttpServletRequest request) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken());
+    	
 		model.addAttribute("productos",repositorioproducto.findAll());
 		
 		return "adminProducto";
@@ -106,7 +110,9 @@ public class ControladorProducto {
 	}
 
 	@RequestMapping("/detallesProducto")
-	public String detallesProducto(Model model, @RequestParam long id) {
+	public String detallesProducto(Model model,HttpServletRequest request ,@RequestParam long id) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		Producto producto = repositorioproducto.findByIdProducto(id);
 		model.addAttribute("producto", producto);
         model.addAttribute("usuarios", repositoriousuario.findAll());
@@ -118,15 +124,17 @@ public class ControladorProducto {
 	}
 	
 	@RequestMapping("/agregarProducto")
-	public String  agregarProducto() {
-		
+	public String  agregarProducto(Model model,HttpServletRequest request) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken());
 		return "agregarProducto";
 	}
 	
 	@RequestMapping("/agregacionProducto")
-	public String agregacionProducto (Model model,@RequestParam String nombre, @RequestParam String categoria, 
+	public String agregacionProducto (Model model,HttpServletRequest request,@RequestParam String nombre, @RequestParam String categoria, 
 			@RequestParam String descripcion, @RequestParam String urlImagen,@RequestParam int precio) {
-	
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken());
 		Producto producto = new Producto (nombre,categoria,descripcion,urlImagen,precio);
 		repositorioproducto.save(producto);
 	
@@ -136,7 +144,9 @@ public class ControladorProducto {
 	
 	
 	@RequestMapping("/modificarProducto")
-	public String modificarProducto (Model model,@RequestParam long idProducto) {
+	public String modificarProducto (Model model,HttpServletRequest request,@RequestParam long idProducto) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		
 		model.addAttribute("producto", repositorioproducto.findByIdProducto(idProducto));
 		
@@ -144,9 +154,10 @@ public class ControladorProducto {
 	}
 	
 	@RequestMapping("/modificacionProducto")//modprodpeticion
-	public String modificarProductoPeticion (Model model, @RequestParam long idProducto,@RequestParam String nombre, @RequestParam String categoria,
+	public String modificarProductoPeticion (Model model,HttpServletRequest request ,@RequestParam long idProducto,@RequestParam String nombre, @RequestParam String categoria,
 			@RequestParam String descripcion, @RequestParam int precio, @RequestParam String urlImagen) {
-		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		Producto producto = repositorioproducto.findByIdProducto(idProducto);
 		producto.setNombre(nombre);
 		producto.setCategoria(categoria);
@@ -160,13 +171,17 @@ public class ControladorProducto {
 	}
 	
 	@RequestMapping("/adminProducto")
-	public String adminProducto(Model model) {
+	public String adminProducto(Model model, HttpServletRequest request) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken());
 		model.addAttribute("productos",repositorioproducto.findAll());
 		return "adminProducto";
 	}
 	
 	@RequestMapping("/eliminarProducto")
-	public String eliminarProducto (Model model, @RequestParam long idProducto) {
+	public String eliminarProducto (Model model,HttpServletRequest request ,@RequestParam long idProducto) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		Producto producto = repositorioproducto.findByIdProducto(idProducto);
 		repositorioproducto.delete(producto);
 		
