@@ -37,6 +37,7 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
 			throw new BadCredentialsException("Wrong password");
 		}
 
+		//Cambios
 		List<GrantedAuthority> roles = new ArrayList<>();
 		//roles.add(new SimpleGrantedAuthority(user.getRole()));
 
