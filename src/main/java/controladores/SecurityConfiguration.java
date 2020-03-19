@@ -30,6 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		//http.authorizeRequests().anyRequest().authenticated();
 		
 		http.authorizeRequests().antMatchers("/carritoDetalles").hasAnyRole("USER","ADMIN");
+		http.authorizeRequests().antMatchers("/indexLogado").hasAnyRole("USER","ADMIN");
 		http.authorizeRequests().antMatchers("/shop logado").hasAnyRole("USER","ADMIN");
 		http.authorizeRequests().antMatchers("/product logado").hasAnyRole("USER","ADMIN");
 		http.authorizeRequests().antMatchers("/controladorLogin").permitAll();

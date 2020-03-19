@@ -54,11 +54,10 @@ public class ControladorUsuario {
 	
 	@PostMapping("/agregarUsuario")
 	public String agregarUsuario (@RequestParam String nombreusuario,@RequestParam String password,Model model,HttpServletRequest request ,@RequestParam String direccion, 
-			@RequestParam int telefono, @RequestParam int codigoPostal, @RequestParam String email,@RequestParam String nombreCompleto,
-			@RequestParam boolean esAdmin) {
+			@RequestParam int telefono, @RequestParam int codigoPostal, @RequestParam String email,@RequestParam String nombreCompleto) {
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
     	model.addAttribute("token", token.getToken()); 
-		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password, false);
+		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password, true);
 		repositoriousuario.save(u);
 		
 		return "indexLogado";
