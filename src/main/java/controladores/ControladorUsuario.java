@@ -58,7 +58,7 @@ public class ControladorUsuario {
 			@RequestParam boolean esAdmin) {
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
     	model.addAttribute("token", token.getToken()); 
-		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password);
+		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password, false);
 		repositoriousuario.save(u);
 		
 		return "indexLogado";
