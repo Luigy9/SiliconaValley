@@ -31,7 +31,6 @@ public class Usuario {
 	private String nombreCompleto;
 	private int codigoPostal;
 	private String password;
-	private boolean esAdmin;
 	@OneToMany(mappedBy="usuario")
 	@Cascade({CascadeType.ALL})
 	private List<Pedido> pedidos = new ArrayList<Pedido>();
@@ -53,7 +52,7 @@ public class Usuario {
 		this.nombreUsuario = nombreusuario;
 		this.password = password;
 	}
-	public Usuario(String nombreusuario, String email, String direccion, int telefono, String nombreCompleto, int codigoPostal, String password, boolean esAdmin) {
+	public Usuario(String nombreusuario, String email, String direccion, int telefono, String nombreCompleto, int codigoPostal, String password) {
 
 		this.email = email;
 		this.direccion = direccion;
@@ -62,7 +61,6 @@ public class Usuario {
 		this.nombreCompleto = nombreCompleto;
 		this.codigoPostal = codigoPostal;
 		this.password = new BCryptPasswordEncoder().encode(password);
-		this.esAdmin=esAdmin;
 		
 	}
 	
@@ -126,17 +124,6 @@ public class Usuario {
 		return password;
 	}
 	
-	public String getRole() {
-		if(this.esAdmin) {
-			return "ROLE_ADMIN";
-		}
-		
-		return "ROLE_USER";
-	}
-	
-	public boolean getEsAdmin() {
-		return this.esAdmin;
-	}
 	
 	public void setPassword(String password) {
 		this.password = password;

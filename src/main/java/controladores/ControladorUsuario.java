@@ -44,11 +44,11 @@ public class ControladorUsuario {
     	Usuario usuario=repositoriousuario.findByNombreUsuario(request.getUserPrincipal().getName());
     	CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
     	model.addAttribute("token", token.getToken()); 
-    	if (usuario.getEsAdmin()) {
+    	/*if (usuario.getEsAdmin()) {
     		model.addAttribute("usuarioAdmin",request.isUserInRole("ADMIN"));
     	}else{
     		model.addAttribute("usuario",request.isUserInRole("USER"));
-    	}
+    	}*/
     	return "indexLogado";
     }
 	
@@ -58,7 +58,7 @@ public class ControladorUsuario {
 			@RequestParam boolean esAdmin) {
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
     	model.addAttribute("token", token.getToken()); 
-		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password,esAdmin);
+		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password);
 		repositoriousuario.save(u);
 		
 		return "indexLogado";
