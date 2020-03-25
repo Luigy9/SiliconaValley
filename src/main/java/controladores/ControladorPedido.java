@@ -1,10 +1,15 @@
 package controladores;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
 import entidades.Pedido;
 import entidades.Producto;
@@ -32,8 +37,9 @@ public class ControladorPedido {
 	}
 	
 	@RequestMapping("/carritoPagar")//Añadir html donde va 
-	public String carritoPagar (Model model) {
-		
+	public String carritoPagar (Model model, HttpServletRequest request) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
 		return "/check-out";
 	}
 
@@ -64,6 +70,20 @@ public class ControladorPedido {
         model.addAttribute("cyv", producto.getCyV());
 		
 		return "product";
+	}
+	
+	@RequestMapping("/correopdf")
+	public String ImprimirCarrito (Model model) {
+		
+		Pedido pedido = repositoriopedido.findByIdPedido(1);
+		pedido.getListaProductos();
+		
+		String urlCorreo="http://localhost:8088/correopdf";
+		RestTemplate rest=new RestTemplate();
+		rest.postForObject(urlCorreo,pedido.toString(),Pedido.class);
+		
+		
+		return "index";
 	}
 //	
 //	@RequestMapping("")//Añadir html donde va 
