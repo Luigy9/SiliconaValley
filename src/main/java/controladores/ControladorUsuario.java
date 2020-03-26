@@ -31,14 +31,15 @@ public class ControladorUsuario {
     	model.addAttribute("token", token.getToken()); 
 		return "register";
 	}
-	@RequestMapping("/controladorLogin")
+	
+	@GetMapping("/controladorLogin")
 	public String controladorLogin (Model model, HttpServletRequest request) {
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
     	model.addAttribute("token", token.getToken()); 
 		return "login";
 	}	
 	
-    @RequestMapping("/login")
+    @RequestMapping("/indexLogado")
     public String login(Model model, HttpServletRequest request) {
     	
     	Usuario usuario=repositoriousuario.findByNombreUsuario(request.getUserPrincipal().getName());
