@@ -52,6 +52,13 @@ public class ControladorUsuario {
     	}*/
     	return "indexLogado";
     }
+    
+    @RequestMapping("/logout")
+    public String logout(Model model, HttpServletRequest request) {
+    	CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken()); 
+    	return "index";
+    }
 	
 	@PostMapping("/agregarUsuario")
 	public String agregarUsuario (@RequestParam String nombreusuario,@RequestParam String password,Model model,HttpServletRequest request ,@RequestParam String direccion, 

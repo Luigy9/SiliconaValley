@@ -41,7 +41,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/modificarProducto").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers("/modificarUsuario").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers("/eliminarUsuario").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers("/adminProducto").hasRole("USER");
+		http.authorizeRequests().antMatchers("/adminProducto").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers("/adminUsuario").hasRole("ADMIN");
 		//http.authorizeRequests().anyRequest().permitAll();
 		
@@ -56,8 +56,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
         http.formLogin().failureUrl("/controladorRegistro");        
         
         //Logout
-        http.logout().logoutUrl("/logout");
-        http.logout().logoutSuccessUrl("/logout");
+        http.logout().logoutUrl("/index");
+        http.logout().logoutSuccessUrl("/index");
         
         //CSRF
         //http.csrf().disable();
