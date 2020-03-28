@@ -3,6 +3,7 @@ package dadSiliconaPackage;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -21,44 +22,45 @@ public class EnviarCorreo {
 	
 
 	
-	@RequestMapping(value = "/correopdf")
-	public ResponseEntity<String> sendEmail(){
+	@PostMapping(value = "/correopdf")
+	public void sendEmail(){
+		
+		final String username = "siliconavalleyprueba@gmail.com";
+        final String password = "masterdecifuentes1";
 
 		try
         {
-            // Propiedades de la conexión
-            Properties props = new Properties();
-            props.setProperty("mail.smtp.host", "smtp.gmail.com");
-            props.setProperty("mail.smtp.starttls.enable", "true");
-            props.setProperty("mail.smtp.port", "587");
-            props.setProperty("mail.smtp.auth", "true");
+			Properties props = new Properties();
+			props.put("mail.smtp.host", "smtp.gmail.com");
+	        props.put("mail.smtp.port", "465");
+	        props.put("mail.smtp.auth", "true");
+	        props.put("mail.smtp.socketFactory.port", "465");
+	        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+	        
+	        Session session = Session.getInstance(props,
+	                new javax.mail.Authenticator() {
+	                    protected PasswordAuthentication getPasswordAuthentication() {
+	                        return new PasswordAuthentication(username, password);
+	                    }
+	                });
 
-            // Preparamos la sesion
-            Session session = Session.getDefaultInstance(props);
+	        Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(
+                    Message.RecipientType.TO,
+                    InternetAddress.parse("jaime-raf_95@hotmail.com")
+            );
+            message.setSubject("Testing Gmail SSL");
+            message.setText("HOLA,"
+                    + "\n\n Probando");
 
-            // Construimos el mensaje
-            MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("siliconavalleyprueba@gmail.com"));
-            message.addRecipient(
-                Message.RecipientType.TO,
-                new InternetAddress("jaime-raf_95@hotmail.com"));
-            message.setSubject("Hola");
-            message.setText(
-                "Mensaje con Java Mail");
-
-            // Lo enviamos.
-            Transport t = session.getTransport("smtp");
-            t.connect("jaime-raf_95@hotmail.com", "masterdecifuentes1");
-            t.sendMessage(message, message.getAllRecipients());
-
-            // Cierre.
-            t.close();
+            Transport.send(message);
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
-			return new ResponseEntity<>("OK",HttpStatus.ACCEPTED);
+			
 		}
 		
 	
