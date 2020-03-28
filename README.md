@@ -27,7 +27,8 @@ videojuegos,etc. Nuestra web tendrá dos partes:
 
 La aplicación integrará los servicios internos:
   
-  **-Generación de PDF:** se generará un documento PDF para visualizar los pedidos.
+  **-Comprobación del registro:** cuando realizamos el registro en la aplicación, se enviará un correo confirmando el            
+  registro.
   
   **-Notificación por correo:** al realizar un usuario un pedido, se enviará la informacion de la compra a su correo.
   
@@ -144,3 +145,14 @@ En el diagrama de navegación podemos ver la parte amarilla, correspondiente a l
  -Un Producto puede estar en varios pedidos y varios pedidos pueden tener varios productos. Relación N:M
  
  -Un Producto puede realizar varias valoraciones y varias valoraciones solo pueden tener un producto. Relación 1:N
+ 
+ 
+  ## **Virtualización:**
+
+
+  ## **Diagrama de navegación:**
+  
+  
+  
+  
+  ## **Servicio interno:**
