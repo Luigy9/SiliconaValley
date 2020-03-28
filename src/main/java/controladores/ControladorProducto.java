@@ -305,7 +305,9 @@ public class ControladorProducto {
 		return "shop logado";
 	}	
 	@RequestMapping("/detallesProductoLogado")
-	public String detallesProductoLogado(Model model, @RequestParam long id) {
+	public String detallesProductoLogado(Model model,HttpServletRequest request ,@RequestParam long id) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken());
 		Producto producto = repositorioproducto.findByIdProducto(id);
 		model.addAttribute("producto", producto);
         model.addAttribute("usuarios", repositoriousuario.findAll());

@@ -56,9 +56,10 @@ public class ControladorPedido {
 	}
 	
 	@RequestMapping("/añadirProductoCarrito")
-	public String añadirProductoCarrito (Model model, @RequestParam long idProducto) {
+	public String añadirProductoCarrito (Model model, HttpServletRequest request,@RequestParam long idProducto) {
 		Producto producto = repositorioproducto.findByIdProducto(idProducto);
-		
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken());
 		Pedido pedido = repositoriopedido.findByIdPedido(1);
 		producto.setPedido(pedido);
 		pedido.getListaProductos().add(producto);
