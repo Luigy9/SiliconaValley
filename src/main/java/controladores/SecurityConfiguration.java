@@ -24,16 +24,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/").permitAll();
 		http.authorizeRequests().antMatchers("/index").permitAll();
 		http.authorizeRequests().antMatchers("/login").permitAll();
-		
-		
-		//Paginas privadas
-		//http.authorizeRequests().anyRequest().authenticated();
+		http.authorizeRequests().antMatchers("/controladorLogin").permitAll();
 		
 		http.authorizeRequests().antMatchers("/carritoDetalles").hasAnyRole("USER","ADMIN");
+		http.authorizeRequests().antMatchers("/añadirProductoCarrito").hasAnyRole("USER","ADMIN");
+		http.authorizeRequests().antMatchers("/eliminarProductoCarrito").hasAnyRole("USER","ADMIN");
 		http.authorizeRequests().antMatchers("/indexLogado").hasAnyRole("USER","ADMIN");
 		http.authorizeRequests().antMatchers("/shop logado").hasAnyRole("USER","ADMIN");
 		http.authorizeRequests().antMatchers("/product logado").hasAnyRole("USER","ADMIN");
-		http.authorizeRequests().antMatchers("/controladorLogin").permitAll();
+		http.authorizeRequests().antMatchers("/carritoPagar").hasAnyRole("USER", "ADMIN");
 		
 		http.authorizeRequests().antMatchers("/modificarProducto").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers("/eliminarProducto").hasRole("ADMIN");
@@ -43,9 +42,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/eliminarUsuario").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers("/adminProducto").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers("/adminUsuario").hasRole("ADMIN");
-		//http.authorizeRequests().anyRequest().permitAll();
-		
-		http.authorizeRequests().antMatchers("/carritoPagar").hasRole("USER");
 		
 		
 		//Login
@@ -58,7 +54,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
         //Logout
         //http.logout().logoutUrl("/index");
         http.logout().logoutSuccessUrl("/");
-        
+        http.logout().logoutUrl("/");
         //CSRF
         //http.csrf().disable();
 	}
