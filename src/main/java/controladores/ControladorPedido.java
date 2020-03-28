@@ -32,6 +32,7 @@ public class ControladorPedido {
 		
 		Pedido pedido = repositoriopedido.findByIdPedido(1);
 		model.addAttribute("pedido", pedido);
+        model.addAttribute("usuarios", repositoriousuario.findAll());
 		model.addAttribute("lista", pedido.getListaProductos());
 		return "/shopping-cart";
 	}
@@ -52,7 +53,7 @@ public class ControladorPedido {
 		pedido.getListaProductos().remove(producto);
 		repositoriopedido.save(pedido);
 		
-		return "/";
+		return "/carritoDetalles";
 	}
 	
 	@RequestMapping("/añadirProductoCarrito")
@@ -70,7 +71,7 @@ public class ControladorPedido {
         model.addAttribute("usuarios", repositoriousuario.findAll());
         model.addAttribute("cyv", producto.getCyV());
 		
-		return "product";
+		return "product logado";
 	}
 	
 	@RequestMapping("/correopdf")
