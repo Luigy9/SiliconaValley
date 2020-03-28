@@ -50,9 +50,50 @@ public class EnviarCorreo {
                     Message.RecipientType.TO,
                     InternetAddress.parse("jaime-raf_95@hotmail.com")
             );
-            message.setSubject("Testing Gmail SSL");
-            message.setText("HOLA,"
-                    + "\n\n Probando");
+            message.setSubject("Confirmación pedido SiliconaValley");
+            message.setText("Gracias por tu pedido,"
+                    + "\n\n Se ha realizado correctamente");
+
+            Transport.send(message);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+			
+		}
+	
+	@PostMapping(value = "/registroAPI")
+	public void sendRegistro(){
+		
+		final String username = "siliconavalleyprueba@gmail.com";
+        final String password = "masterdecifuentes1";
+
+		try
+        {
+			Properties props = new Properties();
+			props.put("mail.smtp.host", "smtp.gmail.com");
+	        props.put("mail.smtp.port", "465");
+	        props.put("mail.smtp.auth", "true");
+	        props.put("mail.smtp.socketFactory.port", "465");
+	        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+	        
+	        Session session = Session.getInstance(props,
+	                new javax.mail.Authenticator() {
+	                    protected PasswordAuthentication getPasswordAuthentication() {
+	                        return new PasswordAuthentication(username, password);
+	                    }
+	                });
+
+	        Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(
+                    Message.RecipientType.TO,
+                    InternetAddress.parse("jaime-raf_95@hotmail.com")
+            );
+            message.setSubject("Registro en SiliconaValley");
+            message.setText("Gracias por tu registro,"
+                    + "\n\n Te has registrado correctamente");
 
             Transport.send(message);
         }
