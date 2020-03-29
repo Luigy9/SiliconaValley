@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,10 +24,12 @@ public class EnviarCorreo {
 
 	
 	@PostMapping(value = "/correopdf")
-	public void sendEmail(){
+	public void sendEmail(@RequestBody String pedido){
 		
 		final String username = "siliconavalleyprueba@gmail.com";
         final String password = "masterdecifuentes1";
+        String pedidoenviar = pedido.replace("[", "").replace("]", "");
+        
 
 		try
         {
@@ -52,7 +55,8 @@ public class EnviarCorreo {
             );
             message.setSubject("Confirmación pedido SiliconaValley");
             message.setText("Gracias por tu pedido,"
-                    + "\n\n Se ha realizado correctamente");
+                    + "\n\n Se ha realizado correctamente"
+            		+ "\n\n " + pedidoenviar);
 
             Transport.send(message);
         }

@@ -1,5 +1,8 @@
 package controladores;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,7 +81,7 @@ public class ControladorPedido {
 	public String ImprimirCarrito (Model model) {
 		
 		Pedido pedido = repositoriopedido.findByIdPedido(1);
-		pedido.getListaProductos();
+		List<Producto> lista = pedido.getListaProductos();
 		
 		String urlCorreo="http://localhost:8088/correopdf";
 		RestTemplate rest=new RestTemplate();
