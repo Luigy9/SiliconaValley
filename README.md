@@ -90,7 +90,7 @@ La aplicación integrará los servicios internos:
   
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ps4.png)
   
-  **Juegos XOBOX ONE**
+  **Juegos XBOX ONE**
   
   Aqui podemos ver los productos que se encuentran dentro de la categoría juegos xbox one
   
@@ -152,7 +152,23 @@ En el diagrama de navegación podemos ver la parte amarilla, correspondiente a l
 
   ## **Diagrama de navegación:**
   
+  Al incluir la parte de seguridad en nuestra aplicación, nuestro diagrama de navegación cambia en cuanto al acceso a algunas funcionalidades a las que podamos acceder dependiendo de si estamos logueados o no, diferenciado por los colores:
+
+*El color amarillo representa la zona totalmente pública.
+
+*El color naranja representa la zona totalmente privada.
+
+*El color azul representan las zonas que dependiendo de si el usuario esta autenticado en la aplicación, puede acceder a la funcionalidad o no.
   
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/diagrama2.png)
   
   
   ## **Servicio interno:**
+  
+  Hemos implementado el servicio descrito anteriormente, que consiste en mandar un correo al realizar el registro en la aplicación y cuando realizamos un pedido por la web:
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/correo.png)
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/correo2.png)
+  
+  
