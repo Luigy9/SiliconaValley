@@ -12,6 +12,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableAutoConfiguration
 @SpringBootApplication
 @SpringBootTest
+@EntityScan("entidades")
+@EnableJpaRepositories("repositorios")
+@EnableAutoConfiguration
+@SpringBootApplication
 class SiliconaValleyApplicationTests {
 
 	@Test
