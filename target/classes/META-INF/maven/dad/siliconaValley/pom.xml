@@ -11,6 +11,8 @@
 	<groupId>dad</groupId>
 	<artifactId>siliconaValley</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	
 	<name>siliconaValley</name>
 	<description>Proyecto de la asignatura de desarrollo de aplicaciones distribuidas</description>
 

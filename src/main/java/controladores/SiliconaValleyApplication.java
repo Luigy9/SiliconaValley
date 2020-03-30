@@ -6,10 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
+
 @EntityScan("entidades")
 @EnableJpaRepositories("repositorios")
 @EnableAutoConfiguration
+@SpringBootApplication
 public class SiliconaValleyApplication {
 
 	public static void main(String[] args) {
