@@ -184,7 +184,7 @@ Para preparar la máquina virtual hemos seguido los siguientes pasos:
   
   Hemos implementado el servicio descrito anteriormente, que consiste en mandar un correo al realizar el registro en la aplicación y cuando realizamos un pedido por la web:
   
-  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/correo1.png)
   
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/correo2.png)
   
