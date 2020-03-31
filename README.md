@@ -146,6 +146,7 @@ En el diagrama de navegación podemos ver la parte amarilla, correspondiente a l
  
  -Un Producto puede realizar varias valoraciones y varias valoraciones solo pueden tener un producto. Relación 1:N
  
+  ## **FASE 3**
  
   ## **Virtualización:**
 
