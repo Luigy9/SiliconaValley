@@ -90,7 +90,7 @@ La aplicación integrará los servicios internos:
   
   ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/ps4.png)
   
-  **Juegos XOBOX ONE**
+  **Juegos XBOX ONE**
   
   Aqui podemos ver los productos que se encuentran dentro de la categoría juegos xbox one
   
@@ -149,10 +149,43 @@ En el diagrama de navegación podemos ver la parte amarilla, correspondiente a l
  
   ## **Virtualización:**
 
+La parte de virtualización la hemos realizado con la herramienta de Parallels Desktop, una herramienta de MacOSX.
+
+Como Máquina virtual, hemos utilizado una imagen de Ubuntu Linux, la versión 16.04.
+
+Para preparar la máquina virtual hemos seguido los siguientes pasos:
+
+ - sudo apt-get update
+ - sudo apt-get install default-jdk
+ - sudo apt-get install mysql-server
+ 
+ Lanzamos una versión de la aplicación en la que cargamos nuestra BBDD con todos nuestros items a través de los postconstruct, sin fotos por motivos de copyright y una vez aseguramos que la BBDD funciona correctamente, generamos los .jar de la aplicación y del servicio interno.
+ 
+ una vez generados los .jar los movemos a nuestra máquina virtual y los lanzamos con el comando java -jar nombreapp.java.
+ 
+ Para consultar la dirección que debemos atacar desde nuestro ordenador, usamos el comando hostname -I que nos devuelve la IP que tenemos que usar en la ruta.
+ 
+ Si todo es correcto, debemos ver en nuestro pc la página web y ser capaces de utilizar nuestra API
 
   ## **Diagrama de navegación:**
   
+  Al incluir la parte de seguridad en nuestra aplicación, nuestro diagrama de navegación cambia en cuanto al acceso a algunas funcionalidades a las que podamos acceder dependiendo de si estamos logueados o no, diferenciado por los colores:
+
+*El color amarillo representa la zona totalmente pública.
+
+*El color naranja representa la zona totalmente privada.
+
+*El color azul representan las zonas que dependiendo de si el usuario esta autenticado en la aplicación, puede acceder a la funcionalidad o no.
   
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/diagrama2.png)
   
   
   ## **Servicio interno:**
+  
+  Hemos implementado el servicio descrito anteriormente, que consiste en mandar un correo al realizar el registro en la aplicación y cuando realizamos un pedido por la web:
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/correo.png)
+  
+  ![Captura](https://github.com/Luigy9/SiliconaValley/blob/master/capturas/correo2.png)
+  
+  
