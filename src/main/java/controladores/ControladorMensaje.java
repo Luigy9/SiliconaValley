@@ -27,8 +27,9 @@ public class ControladorMensaje {
 	private RepositorioUsuario repositorioUsuario;
 	
 	@RequestMapping("/accederContacto")
-	public String accederContacto(Model model) {
-		
+	public String accederContacto(Model model, HttpServletRequest request) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
+    	model.addAttribute("token", token.getToken());
 		model.addAttribute("usuarios",repositorioUsuario.findAll());
 		
 		return "contact";

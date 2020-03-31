@@ -37,14 +37,14 @@ public class ControladorPedido {
 		model.addAttribute("pedido", pedido);
         model.addAttribute("usuarios", repositoriousuario.findAll());
 		model.addAttribute("lista", pedido.getListaProductos());
-		return "/shopping-cart";
+		return "shopping-cart";
 	}
 	
 	@RequestMapping("/carritoPagar")//Añadir html donde va 
 	public String carritoPagar (Model model, HttpServletRequest request) {
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
     	model.addAttribute("token", token.getToken()); 
-		return "/check-out";
+		return "check-out";
 	}
 
 	@RequestMapping("/eliminarProductoCarrito")//Añadir html donde va 
@@ -90,6 +90,7 @@ public class ControladorPedido {
 		
 		return "index";
 	}
+	
 //	
 //	@RequestMapping("")//Añadir html donde va 
 //	public String sumarProductoCarrito (Model model) {

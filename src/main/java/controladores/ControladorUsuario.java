@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
 import entidades.Usuario;
 import repositorios.RepositorioUsuario;
@@ -65,9 +66,12 @@ public class ControladorUsuario {
 			@RequestParam int telefono, @RequestParam int codigoPostal, @RequestParam String email,@RequestParam String nombreCompleto) {
 		CsrfToken token = (CsrfToken) request.getAttribute("_csrf"); 
     	model.addAttribute("token", token.getToken()); 
-		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password, true);
+		Usuario u = new Usuario (nombreusuario, email, direccion, telefono, nombreCompleto, codigoPostal, password, false);
 		repositoriousuario.save(u);
 		
+		String urlCorreo="http://localhost:8088/registroAPI";
+		RestTemplate rest=new RestTemplate();
+		rest.postForObject(urlCorreo,u.toString(),Usuario.class);
 		return "indexLogado";
 	}
 	
