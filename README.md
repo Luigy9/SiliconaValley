@@ -149,6 +149,23 @@ En el diagrama de navegación podemos ver la parte amarilla, correspondiente a l
  
   ## **Virtualización:**
 
+La parte de virtualización la hemos realizado con la herramienta de Parallels Desktop, una herramienta de MacOSX.
+
+Como Máquina virtual, hemos utilizado una imagen de Ubuntu Linux, la versión 16.04.
+
+Para preparar la máquina virtual hemos seguido los siguientes pasos:
+
+ - sudo apt-get update
+ - sudo apt-get install default-jdk
+ - sudo apt-get install mysql-server
+ 
+ Lanzamos una versión de la aplicación en la que cargamos nuestra BBDD con todos nuestros items a través de los postconstruct, sin fotos por motivos de copyright y una vez aseguramos que la BBDD funciona correctamente, generamos los .jar de la aplicación y del servicio interno.
+ 
+ una vez generados los .jar los movemos a nuestra máquina virtual y los lanzamos con el comando java -jar nombreapp.java.
+ 
+ Para consultar la dirección que debemos atacar desde nuestro ordenador, usamos el comando hostname -I que nos devuelve la IP que tenemos que usar en la ruta.
+ 
+ Si todo es correcto, debemos ver en nuestro pc la página web y ser capaces de utilizar nuestra API
 
   ## **Diagrama de navegación:**
   
